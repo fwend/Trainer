@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="setting up project, first entities">
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/_bootswatch.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/_variables.scss" afterDir="false" />
+    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
@@ -138,6 +140,7 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iW3EXzFVEFXLgjFjRvfheEZrsc" />
@@ -160,6 +163,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Dev\xampp\htdocs\trainer\public\css" />
       <recent name="C:\Dev\xampp\htdocs\trainer" />
@@ -194,6 +200,7 @@
       <workItem from="1602095405273" duration="72000" />
       <workItem from="1602095637664" duration="219000" />
       <workItem from="1602095924378" duration="7274000" />
+      <workItem from="1602103854601" duration="1967000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -202,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602099222605</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add bootswatch flatly">
+      <created>1602103980386</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602103980386</updated>
+    </task>
+    <task id="LOCAL-00003" summary="move scss offline">
+      <created>1602104093592</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602104093592</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,9 +231,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="setting up project, first entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting up project, first entities" />
+    <MESSAGE value="add bootswatch flatly" />
+    <MESSAGE value="move scss offline" />
+    <option name="LAST_COMMIT_MESSAGE" value="move scss offline" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="349" key="#Notifications" timestamp="1602086161456">
@@ -227,10 +253,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602018829041" />
-    <state x="536" y="112" key="CommitChangelistDialog2" timestamp="1602099293361">
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602104093037">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602099293361" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602104093037" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -239,6 +265,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1050@0.0.1920.1050" timestamp="1602051940338" />
+    <state x="248" y="87" key="DiffContextDialog" timestamp="1602104061699">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="248" y="87" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602104061699" />
     <state x="790" y="360" width="662" height="678" key="EditFileWatcherDialog" timestamp="1602101141285">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -251,6 +281,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="838" y="423" key="Github.ShareDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602099671737" />
+    <state width="1877" height="554" key="GridCell.Tab.0.bottom" timestamp="1602105772582">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="554" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772582" />
+    <state width="1877" height="554" key="GridCell.Tab.0.center" timestamp="1602105772581">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="554" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772581" />
+    <state width="1877" height="554" key="GridCell.Tab.0.left" timestamp="1602105772581">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="554" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772581" />
+    <state width="1877" height="554" key="GridCell.Tab.0.right" timestamp="1602105772582">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="554" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772582" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1602052058785">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -267,6 +313,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1050@0.0.1920.1050" timestamp="1602018348290" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1602104112986">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602104112986" />
     <state x="859" y="402" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1602051962100">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -275,6 +325,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1737" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602096212759" />
+    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602104127629">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602104127629" />
     <state x="241" y="41" width="1302" height="897" key="find.popup" timestamp="1602096140087">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

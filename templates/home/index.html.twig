@@ -3,5 +3,12 @@
 {% block title %}Trainer menu{% endblock %}
 
 {% block body %}
-    test
+    <div class="mt-5">
+        <h4>Sections</h4>
+        <ul>
+            {% for section in sections %}
+                <li>{{ section }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

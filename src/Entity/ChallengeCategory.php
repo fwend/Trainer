@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ChallengeCategoryRepository::class)
  */
-class ChallengeCategory
+class ChallengeCategory extends Entity
 {
     /**
      * @ORM\Id

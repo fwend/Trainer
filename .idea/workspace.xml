@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/add.section.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
@@ -200,7 +203,9 @@
       <workItem from="1602095405273" duration="72000" />
       <workItem from="1602095637664" duration="219000" />
       <workItem from="1602095924378" duration="7274000" />
-      <workItem from="1602103854601" duration="1967000" />
+      <workItem from="1602103854601" duration="3155000" />
+      <workItem from="1602331907579" duration="604000" />
+      <workItem from="1602365761789" duration="5049000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -223,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602104093592</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add encore webpack">
+      <created>1602105893625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602105893625</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +248,8 @@
     <MESSAGE value="setting up project, first entities" />
     <MESSAGE value="add bootswatch flatly" />
     <MESSAGE value="move scss offline" />
-    <option name="LAST_COMMIT_MESSAGE" value="move scss offline" />
+    <MESSAGE value="add encore webpack" />
+    <option name="LAST_COMMIT_MESSAGE" value="add encore webpack" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -253,10 +266,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602018829041" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602104093037">
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602105892657">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602104093037" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602105892657" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -281,26 +294,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="838" y="423" key="Github.ShareDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602099671737" />
-    <state width="1877" height="554" key="GridCell.Tab.0.bottom" timestamp="1602105772582">
+    <state width="1877" height="554" key="GridCell.Tab.0.bottom" timestamp="1602108699991">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="554" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772582" />
-    <state width="1877" height="554" key="GridCell.Tab.0.center" timestamp="1602105772581">
+    <state width="1877" height="554" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602108699991" />
+    <state width="1877" height="554" key="GridCell.Tab.0.center" timestamp="1602108699991">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="554" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772581" />
-    <state width="1877" height="554" key="GridCell.Tab.0.left" timestamp="1602105772581">
+    <state width="1877" height="554" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602108699991" />
+    <state width="1877" height="554" key="GridCell.Tab.0.left" timestamp="1602108699976">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="554" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772581" />
-    <state width="1877" height="554" key="GridCell.Tab.0.right" timestamp="1602105772582">
+    <state width="1877" height="554" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602108699976" />
+    <state width="1877" height="554" key="GridCell.Tab.0.right" timestamp="1602108699991">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="554" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602105772582" />
+    <state width="1877" height="554" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602108699991" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1602052058785">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050@0.0.1920.1050" timestamp="1602052058785" />
+    <state x="757" y="248" key="NewPhpClassDialog" timestamp="1602366091865">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="757" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602366091865" />
     <state x="793" y="227" key="RollbackChangesDialog" timestamp="1602096653097">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

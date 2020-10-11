@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201011081004.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Traits/NameTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Traits/PositionTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/add.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/add.section.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +202,7 @@
       <workItem from="1602103854601" duration="3155000" />
       <workItem from="1602331907579" duration="604000" />
       <workItem from="1602365761789" duration="12427000" />
-      <workItem from="1602402999807" duration="2857000" />
+      <workItem from="1602402999807" duration="8621000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -252,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602403172487</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="site.css">
+      <created>1602406180651</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602406180651</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +268,8 @@
     <MESSAGE value="move scss offline" />
     <MESSAGE value="add encore webpack" />
     <MESSAGE value="gedmo" />
-    <option name="LAST_COMMIT_MESSAGE" value="gedmo" />
+    <MESSAGE value="site.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="site.css" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -288,10 +290,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602403455011" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602403171371">
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602406180014">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602403171371" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602406180014" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -340,10 +342,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="757" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602403500516" />
-    <state x="793" y="227" key="RollbackChangesDialog" timestamp="1602096653097">
+    <state x="793" y="227" key="RollbackChangesDialog" timestamp="1602416303848">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="793" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602096653097" />
+    <state x="793" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602416303848" />
     <state x="622" y="226" width="998" height="711" key="SettingsEditor" timestamp="1602378146783">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -368,6 +370,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1737" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602096212759" />
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602416466803">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602416466803" />
     <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602104127629">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

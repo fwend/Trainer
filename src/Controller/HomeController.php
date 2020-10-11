@@ -18,8 +18,6 @@ class HomeController extends AbstractController {
     {
         $sections = $repo->findBy([], ['position' => 'asc']);
 
-        $sections = ['one', 'two', 'three'];
-
         return $this->render('home/index.html.twig', [
             'sections' => $sections,
         ]);

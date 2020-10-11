@@ -4,8 +4,53 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "e6133e3867dcc22c0149788278df8441",
+  "content-hash": "bf8fd1eedcef55ce97e00e3170dd12d8",
   "packages": [
+    {
+      "name": "behat/transliterator",
+      "version": "v1.3.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/Behat/Transliterator.git",
+        "reference": "3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/Behat/Transliterator/zipball/3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc",
+        "reference": "3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=5.3.3"
+      },
+      "require-dev": {
+        "chuyskywalker/rolling-curl": "^3.1",
+        "php-yaoi/php-yaoi": "^1.0",
+        "phpunit/phpunit": "^4.8.36|^6.3"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.2-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Behat\\Transliterator\\": "src/Behat/Transliterator"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "Artistic-1.0"
+      ],
+      "description": "String transliterator",
+      "keywords": [
+        "i18n",
+        "slug",
+        "transliterator"
+      ],
+      "time": "2020-01-14T16:39:13+00:00"
+    },
     {
       "name": "composer/package-versions-deprecated",
       "version": "1.11.99",
@@ -15,16 +60,16 @@
         "reference": "c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855"
       },
       "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855",
-                "reference": "c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1.0 || ^2.0",
-                "php": "^7 || ^8"
-            },
-            "replace": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855",
+        "reference": "c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855",
+        "shasum": ""
+      },
+      "require": {
+        "composer-plugin-api": "^1.1.0 || ^2.0",
+        "php": "^7 || ^8"
+      },
+      "replace": {
                 "ocramius/package-versions": "1.11.99"
             },
             "require-dev": {
@@ -1319,26 +1364,117 @@
             ],
             "description": "A library for validating emails against several RFCs",
             "homepage": "https://github.com/egulias/EmailValidator",
-            "keywords": [
-                "email",
-                "emailvalidation",
-                "emailvalidator",
-                "validation",
-                "validator"
-            ],
-            "time": "2020-09-26T15:48:38+00:00"
+          "keywords": [
+            "email",
+            "emailvalidation",
+            "emailvalidator",
+            "validation",
+            "validator"
+          ],
+          "time": "2020-09-26T15:48:38+00:00"
+        },
+    {
+      "name": "gedmo/doctrine-extensions",
+      "version": "v3.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
+        "reference": "be551985759946a45d052777c2906aa52db64532"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/be551985759946a45d052777c2906aa52db64532",
+        "reference": "be551985759946a45d052777c2906aa52db64532",
+        "shasum": ""
+      },
+      "require": {
+        "behat/transliterator": "~1.2",
+        "doctrine/annotations": "^1.2",
+        "doctrine/cache": "^1.0",
+        "doctrine/collections": "^1.0",
+        "doctrine/common": "^2.13 || ^3.0",
+        "doctrine/event-manager": "^1.0",
+        "php": "^7.2"
+      },
+      "conflict": {
+        "doctrine/mongodb": "<1.3",
+        "doctrine/mongodb-odm": "<2.0",
+        "sebastian/comparator": "<2.0"
+      },
+      "provide": {
+        "ext-mongo": "1.6.12"
+      },
+      "require-dev": {
+        "alcaeus/mongo-php-adapter": "^1.1",
+        "doctrine/mongodb-odm": "^2.0",
+        "doctrine/orm": "^2.6.3",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^8.5",
+        "symfony/yaml": "^4.1"
+      },
+      "suggest": {
+        "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
+        "doctrine/orm": "to use the extensions with the ORM"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "3.0-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Gedmo\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Gediminas Morkevicius",
+          "email": "gediminas.morkevicius@gmail.com"
         },
         {
-            "name": "laminas/laminas-code",
-            "version": "3.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "1cb8f203389ab1482bf89c0e70a04849bacd7766"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/1cb8f203389ab1482bf89c0e70a04849bacd7766",
+          "name": "Gustavo Falco",
+          "email": "comfortablynumb84@gmail.com"
+        },
+        {
+          "name": "David Buchmann",
+          "email": "david@liip.ch"
+        }
+      ],
+      "description": "Doctrine2 behavioral extensions",
+      "homepage": "http://gediminasm.org/",
+      "keywords": [
+        "Blameable",
+        "behaviors",
+        "doctrine2",
+        "extensions",
+        "gedmo",
+        "loggable",
+        "nestedset",
+        "sluggable",
+        "sortable",
+        "timestampable",
+        "translatable",
+        "tree",
+        "uploadable"
+      ],
+      "time": "2020-09-23T16:40:45+00:00"
+    },
+    {
+      "name": "laminas/laminas-code",
+      "version": "3.4.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/laminas/laminas-code.git",
+        "reference": "1cb8f203389ab1482bf89c0e70a04849bacd7766"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/laminas/laminas-code/zipball/1cb8f203389ab1482bf89c0e70a04849bacd7766",
                 "reference": "1cb8f203389ab1482bf89c0e70a04849bacd7766",
                 "shasum": ""
             },
@@ -6067,10 +6203,10 @@
             "description": "Symfony WebLink Component",
             "homepage": "https://symfony.com",
             "keywords": [
-                "dns-prefetch",
-                "http",
-                "http2",
-                "link",
+              "dns-prefetch",
+              "http",
+              "http2",
+              "link",
               "performance",
               "prefetch",
               "preload",
@@ -6144,16 +6280,16 @@
       "dist": {
         "type": "zip",
         "url": "https://api.github.com/repos/symfony/yaml/zipball/e147a68cb66a8b510f4b7481fe4da5b2ab65ec6a",
-                "reference": "e147a68cb66a8b510f4b7481fe4da5b2ab65ec6a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/deprecation-contracts": "^2.1",
-                "symfony/polyfill-ctype": "~1.8"
-            },
-            "conflict": {
-                "symfony/console": "<4.4"
+        "reference": "e147a68cb66a8b510f4b7481fe4da5b2ab65ec6a",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.2.5",
+        "symfony/deprecation-contracts": "^2.1",
+        "symfony/polyfill-ctype": "~1.8"
+      },
+      "conflict": {
+        "symfony/console": "<4.4"
             },
             "require-dev": {
                 "symfony/console": "^4.4|^5.0"

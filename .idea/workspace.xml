@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/add.section.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/SectionType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e548729a-3bab-4611-a54a-011bed27fe09.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e548729a-3bab-4611-a54a-011bed27fe09.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/add.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/add.section.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +146,8 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iW3EXzFVEFXLgjFjRvfheEZrsc" />
@@ -158,11 +162,12 @@
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -205,7 +210,7 @@
       <workItem from="1602095924378" duration="7274000" />
       <workItem from="1602103854601" duration="3155000" />
       <workItem from="1602331907579" duration="604000" />
-      <workItem from="1602365761789" duration="5049000" />
+      <workItem from="1602365761789" duration="12427000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -235,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602105893625</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add encore webpack">
+      <created>1602372669759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602372669759</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,14 +274,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602052142546" />
-    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1602018829041">
+    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1602379842547">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602018829041" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602105892657">
+    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602379842547" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602375405807">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602105892657" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602375405807" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602372669139">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602372669139" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -278,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1050@0.0.1920.1050" timestamp="1602051940338" />
-    <state x="248" y="87" key="DiffContextDialog" timestamp="1602104061699">
+    <state x="248" y="87" key="DiffContextDialog" timestamp="1602372664010">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="248" y="87" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602104061699" />
+    <state x="248" y="87" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602372664010" />
     <state x="790" y="360" width="662" height="678" key="EditFileWatcherDialog" timestamp="1602101141285">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -322,10 +338,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="793" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602096653097" />
-    <state x="622" y="226" width="998" height="711" key="SettingsEditor" timestamp="1602101142232">
+    <state x="622" y="226" width="998" height="711" key="SettingsEditor" timestamp="1602378146783">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="622" y="226" width="998" height="711" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602101142232" />
+    <state x="622" y="226" width="998" height="711" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602378146783" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1602018348290">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -338,6 +354,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="859" y="402" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1920.1050@0.0.1920.1050" timestamp="1602051962100" />
+    <state x="803" y="298" width="744" height="549" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602380299595">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="803" y="298" width="744" height="549" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602380299595" />
     <state x="92" y="92" width="1737" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1602096212759">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -346,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602104127629" />
-    <state x="241" y="41" width="1302" height="897" key="find.popup" timestamp="1602096140087">
+    <state x="241" y="41" width="1302" height="897" key="find.popup" timestamp="1602380391589">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="241" y="41" width="1302" height="897" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602096140087" />
+    <state x="241" y="41" width="1302" height="897" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602380391589" />
     <state x="761" y="431" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602099377421">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

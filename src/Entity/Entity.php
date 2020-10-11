@@ -1,16 +1,79 @@
 <?php
 
-
 namespace App\Entity;
 
+use DateTime;
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\PropertyAccess\PropertyAccessor;
 
-class Entity
+abstract class Entity
 {
+    protected ?PropertyAccessor $propertyAccessor = null;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    protected DateTime $created;
+
+    /**
+     * @Gedmo\Timestampable(on="change")
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected DateTime $modified;
+
     public function __toString(): string
     {
-        if (isset($this->name)) {
-            return $this->name;
+        $className = get_class($this);
+        if (property_exists($className, 'name')) {
+            return $this->getPropertyAccessor()->getValue($this, 'name');
         }
-        return get_class($this);
+        return $className;
+    }
+
+    public function getPropertyAccessor(): PropertyAccessor
+    {
+        if (!$this->propertyAccessor) {
+            $this->propertyAccessor = PropertyAccess::createPropertyAccessor();
+        }
+        return $this->propertyAccessor;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getCreated(): DateTime
+    {
+        return $this->created;
+    }
+
+    /**
+     * @param DateTime $created
+     * @return Entity
+     */
+    public function setCreated(DateTime $created): Entity
+    {
+        $this->created = $created;
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getModified(): DateTime
+    {
+        return $this->modified;
+    }
+
+    /**
+     * @param DateTime $modified
+     * @return Entity
+     */
+    public function setModified(DateTime $modified): Entity
+    {
+        $this->modified = $modified;
+        return $this;
     }
 }

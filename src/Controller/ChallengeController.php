@@ -12,8 +12,7 @@ class ChallengeController extends AbstractController
      */
     public function index()
     {
-        return $this->render('challenge/index.html.twig', [
-            'controller_name' => 'ChallengeController',
+        return $this->render('challenge/challenge.html.twig', [
         ]);
     }
 }

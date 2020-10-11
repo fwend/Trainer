@@ -34,7 +34,7 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('index');
         }
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/section.index.html.twig', [
             'sections' => $sections,
             'form' => $form->createView()
         ]);

@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\ChallengeCategory;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,10 +14,8 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('section')
-            ->add('position', NumberType::class, [
-                'required' => false
-            ]);
+            ->add('section', HiddenType::class);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

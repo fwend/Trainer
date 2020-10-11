@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/add.section.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +206,7 @@
       <workItem from="1602103854601" duration="3155000" />
       <workItem from="1602331907579" duration="604000" />
       <workItem from="1602365761789" duration="12427000" />
-      <workItem from="1602402999807" duration="8621000" />
+      <workItem from="1602402999807" duration="11971000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -253,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602406180651</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="enable dropdowns">
+      <created>1602418048625</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602418048625</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +280,8 @@
     <MESSAGE value="add encore webpack" />
     <MESSAGE value="gedmo" />
     <MESSAGE value="site.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="site.css" />
+    <MESSAGE value="enable dropdowns" />
+    <option name="LAST_COMMIT_MESSAGE" value="enable dropdowns" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -286,14 +298,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602379842547" />
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602403455011">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602420795917">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602403455011" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602406180014">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602420795917" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602418048063">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602406180014" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602418048063" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -342,18 +354,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="757" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602403500516" />
-    <state x="793" y="227" key="RollbackChangesDialog" timestamp="1602416303848">
+    <state x="793" y="227" key="RollbackChangesDialog" timestamp="1602420997539">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="793" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602416303848" />
+    <state x="793" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602420997539" />
     <state x="622" y="226" width="998" height="711" key="SettingsEditor" timestamp="1602378146783">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="622" y="226" width="998" height="711" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602378146783" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1602018348290">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1602420959523">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1050@0.0.1920.1050" timestamp="1602018348290" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1050@0.0.1920.1050" timestamp="1602420959523" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1602104112986">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

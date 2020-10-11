@@ -19,7 +19,7 @@ abstract class Entity
     protected DateTime $created;
 
     /**
-     * @Gedmo\Timestampable(on="change")
+     * @Gedmo\Timestampable(on="change", field={"*"})
      * @ORM\Column(type="datetime", nullable=true)
      */
     protected DateTime $modified;
@@ -50,30 +50,10 @@ abstract class Entity
     }
 
     /**
-     * @param DateTime $created
-     * @return Entity
-     */
-    public function setCreated(DateTime $created): Entity
-    {
-        $this->created = $created;
-        return $this;
-    }
-
-    /**
      * @return DateTime
      */
     public function getModified(): DateTime
     {
         return $this->modified;
-    }
-
-    /**
-     * @param DateTime $modified
-     * @return Entity
-     */
-    public function setModified(DateTime $modified): Entity
-    {
-        $this->modified = $modified;
-        return $this;
     }
 }

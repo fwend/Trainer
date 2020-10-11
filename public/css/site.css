@@ -1,0 +1,3 @@
+label.required:not(.form-check-label)::after {
+    content: "\0000A0*";
+}

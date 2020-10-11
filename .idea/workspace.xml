@@ -2,20 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/SectionType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e548729a-3bab-4611-a54a-011bed27fe09.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e548729a-3bab-4611-a54a-011bed27fe09.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201011081004.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Traits/NameTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Traits/PositionTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/add.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/add.section.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +208,7 @@
       <workItem from="1602103854601" duration="3155000" />
       <workItem from="1602331907579" duration="604000" />
       <workItem from="1602365761789" duration="12427000" />
+      <workItem from="1602402999807" duration="2857000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -247,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602372669759</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gedmo">
+      <created>1602403172487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602403172487</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +266,8 @@
     <MESSAGE value="add bootswatch flatly" />
     <MESSAGE value="move scss offline" />
     <MESSAGE value="add encore webpack" />
-    <option name="LAST_COMMIT_MESSAGE" value="add encore webpack" />
+    <MESSAGE value="gedmo" />
+    <option name="LAST_COMMIT_MESSAGE" value="gedmo" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -278,14 +284,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602379842547" />
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602375405807">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602403455011">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602375405807" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602372669139">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602403455011" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602403171371">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602372669139" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602403171371" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -330,10 +336,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050@0.0.1920.1050" timestamp="1602052058785" />
-    <state x="757" y="248" key="NewPhpClassDialog" timestamp="1602366091865">
+    <state x="757" y="248" key="NewPhpClassDialog" timestamp="1602403500516">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="757" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602366091865" />
+    <state x="757" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602403500516" />
     <state x="793" y="227" key="RollbackChangesDialog" timestamp="1602096653097">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

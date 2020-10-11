@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ChallengeRepository;
+use App\Traits\NameTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,6 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Challenge extends Entity
 {
+    use NameTrait;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

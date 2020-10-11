@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\ChallengeCategory;
+use App\Entity\ChallengeSection;
 use App\Form\CategoryType;
 use App\Repository\ChallengeCategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,13 +16,13 @@ class CategoryController extends AbstractController
     /**
      * @Route("/categories/{section}", name="list_categories")
      * @param Request $request
-     * @param ChallengeCategory $category
+     * @param ChallengeSection $section
      * @param ChallengeCategoryRepository $repo
      * @return Response
      */
-    public function index(Request $request, ChallengeCategory $category, ChallengeCategoryRepository $repo)
+    public function index(Request $request, ChallengeSection $section, ChallengeCategoryRepository $repo)
     {
-        $categories = $repo->findBy(['section' => $category]);
+        $categories = $repo->findBy(['section' => $section], ['name' => 'asc']);
 
         $form = $this->createForm(CategoryType::class, $category = new ChallengeCategory());
 
@@ -31,11 +32,14 @@ class CategoryController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush();
-            return $this->redirectToRoute('list_categories');
+            return $this->redirectToRoute('list_categories', [
+                'section' => $section->getId()
+            ]);
         }
 
         return $this->render('category/index.html.twig', [
             'categories' => $categories,
+            'section' => $section,
             'form' => $form->createView()
         ]);
     }

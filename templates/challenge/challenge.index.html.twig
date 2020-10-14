@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Challenges{% endblock %}
+
+{% block body %}
+    <div class="mt-5 mb-5">
+
+        <div class="d-flex justify-content-between">
+            <h4>{{ category }} challenges</h4>
+            <a href="{{ path('create_challenge', {'category' : category.id}) }}"
+               class="btn btn-primary">
+                Add challenge
+            </a>
+        </div>
+
+        {% if challenges|length %}
+            <div class="row">
+                {% set half = (challenges|length) / 2|round(0, 'ceil') %}
+                {% for column in challenges|batch(half, '') %}
+                    <div class="col">
+                        <ul class="list-group">
+                            {% for challenge in column %}
+                                <li class="list-group-item list-group-item-action">
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{{ path('take_challenge', {'challenge': challenge.id}) }}">{{ challenge }}</a>
+                                        <a href="{{ path('edit_challenge', {'challenge': challenge.id}) }}">edit</a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

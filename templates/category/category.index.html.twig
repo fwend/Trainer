@@ -25,7 +25,10 @@
                     <ul class="list-group">
                         {% for category in column %}
                             <li class="list-group-item list-group-item-action">
-                                <a href="{{ path('list_challenges', {'category': category.id}) }}">{{ category|lower }}</a>
+                                <div class="d-flex justify-content-between">
+                                    <a href="{{ path('list_challenges', {'category': category.id}) }}">{{ category|lower }}</a>
+                                    <a href="{{ path('edit_category', {'category': category.id}) }}">edit</a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>

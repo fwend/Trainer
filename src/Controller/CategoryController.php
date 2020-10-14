@@ -6,6 +6,7 @@ use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
 use App\Form\CategoryType;
 use App\Repository\ChallengeCategoryRepository;
+use Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +21,10 @@ class CategoryController extends AbstractController
      * @param ChallengeCategoryRepository $repo
      * @return Response
      */
-    public function index(Request $request, ChallengeSection $section, ChallengeCategoryRepository $repo)
+    public function indexAction(
+        Request $request,
+        ChallengeSection $section,
+        ChallengeCategoryRepository $repo): Response
     {
         $categories = $repo->findBy(['section' => $section], ['name' => 'asc']);
 
@@ -42,5 +46,17 @@ class CategoryController extends AbstractController
             'section' => $section,
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/categories/edit/{category}", name="edit_category")
+     *
+     * @param Request $request
+     * @param Category $category
+     * @return Response
+     */
+    public function editCategoryAction(Request $request, Category $category): Response
+    {
+        return new Response('todo');
     }
 }

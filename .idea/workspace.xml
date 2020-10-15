@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201015202026.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ChallengeType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ChallengeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Traits/NameTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/NameTrait.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +155,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/bootstrap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/challenge" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -160,13 +163,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\templates\challenge" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\bootstrap" />
       <recent name="C:\Dev\xampp\htdocs\trainer\public\css" />
       <recent name="C:\Dev\xampp\htdocs\trainer" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
     </key>
   </component>
   <component name="RunManager">
@@ -204,7 +208,7 @@
       <workItem from="1602402999807" duration="22189000" />
       <workItem from="1602660182211" duration="674000" />
       <workItem from="1602700197009" duration="3409000" />
-      <workItem from="1602791440739" duration="789000" />
+      <workItem from="1602791440739" duration="3239000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -297,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602704066859</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="make answers string temporarily">
+      <created>1602793347718</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602793347718</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +330,8 @@
     <MESSAGE value="challenge controller" />
     <MESSAGE value="horizontal form" />
     <MESSAGE value="add challenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="add challenge" />
+    <MESSAGE value="make answers string temporarily" />
+    <option name="LAST_COMMIT_MESSAGE" value="make answers string temporarily" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -332,18 +344,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602052142546" />
-    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1602379842547">
+    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1602793166479">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602379842547" />
+    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602793166479" />
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602702068652">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602702068652" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602704066111">
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602793347021">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602704066111" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602793347021" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

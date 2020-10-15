@@ -9,7 +9,7 @@ trait NameTrait
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $name;
+    protected string $name = '';
 
     public function getName(): ?string
     {

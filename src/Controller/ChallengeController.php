@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
+use App\Form\ChallengeType;
 use App\Repository\ChallengeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,18 +42,20 @@ class ChallengeController extends AbstractController
         Challengecategory $category)
     {
         $challenge = (new Challenge())->setCategory($category);
-        return $this->editChallengeAction($request, $challenge);
+        return $this->editChallengeAction($request, $challenge, true);
     }
 
     /**
      * @Route("/edit-challenge/{challenge}", name="edit_challenge")
      * @param Request $request
      * @param Challenge $challenge
+     * @param bool $adding
      * @return Response
      */
     public function editChallengeAction(
         Request $request,
-        Challenge $challenge)
+        Challenge $challenge,
+        bool $adding = false)
     {
         $form = $this->createForm(ChallengeType::class, $challenge);
 
@@ -66,8 +69,10 @@ class ChallengeController extends AbstractController
                 'category' => $challenge->getCategory()->getId()
             ]);
         }
-        return $this->render('challenge/challenge.html.twig', [
-            'form' => $form->createView()
+        return $this->render('challenge/challenge.edit.html.twig', [
+            'form' => $form->createView(),
+            'challenge' => $challenge,
+            'adding' => $adding
         ]);
     }
 

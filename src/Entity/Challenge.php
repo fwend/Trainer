@@ -26,9 +26,9 @@ class Challenge extends Entity
     private string $content;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string")
      */
-    private array $answers = [];
+    private ?string $answers;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -68,15 +68,14 @@ class Challenge extends Entity
         return $this;
     }
 
-    public function getAnswers(): ?array
+    public function getAnswers(): ?string
     {
         return $this->answers;
     }
 
-    public function setAnswers(array $answers): self
+    public function setAnswers(?string $answers): Challenge
     {
         $this->answers = $answers;
-
         return $this;
     }
 

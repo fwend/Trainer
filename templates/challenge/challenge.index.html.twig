@@ -3,6 +3,7 @@
 {% block title %}Challenges{% endblock %}
 
 {% block body %}
+    {{ parent() }}
     <div class="mt-5 mb-5">
 
         <div class="d-flex justify-content-between">
@@ -14,7 +15,7 @@
         </div>
 
         {% if challenges|length %}
-            <div class="row">
+            <div class="row mt-5">
                 {% set half = (challenges|length) / 2|round(0, 'ceil') %}
                 {% for column in challenges|batch(half, '') %}
                     <div class="col">

@@ -15,15 +15,13 @@
         </ul>
     </nav>
     <div class="row mt-5">
-        start
-        {# <div class="col"> #}
-        {# {{ form_start(form) }} #}
-        {# <h4>Add section</h4> #}
-        {# {{ form_row(form.name) }} #}
-        {# {{ form_row(form.position) }} #}
-        {# <button class="btn btn-primary" type="submit">Submit</button> #}
-        {# {{ form_end(form) }} #}
-        {# </div> #}
+        <div class="col">
+            {{ form_start(form) }}
+            <h4>Start challenge run</h4>
+            {{ form_row(form.section) }}
+            <button class="btn btn-primary" type="submit">Start</button>
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}
 

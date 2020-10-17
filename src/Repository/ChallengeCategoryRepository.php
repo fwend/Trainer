@@ -3,7 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\ChallengeCategory;
+use App\Entity\ChallengeSection;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,32 +22,21 @@ class ChallengeCategoryRepository extends ServiceEntityRepository
         parent::__construct($registry, ChallengeCategory::class);
     }
 
-    // /**
-    //  * @return ChallengeCategory[] Returns an array of ChallengeCategory objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param ChallengeSection $section
+     * @return int
+     */
+    public function findPosition(ChallengeSection $section): int
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        try {
+            return $this->createQueryBuilder('c')
+                ->select('count(c.id)')
+                ->andWhere('c.section = :section')
+                ->setParameter(':section', $section)
+                ->getQuery()
+                ->getSingleScalarResult();
+        } catch (NoResultException|NonUniqueResultException $e) {
+        }
+        return 0;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?ChallengeCategory
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

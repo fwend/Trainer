@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
+use App\Entity\ChallengeSection;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -38,6 +39,28 @@ class ChallengeRepository extends ServiceEntityRepository
         } catch (NoResultException|NonUniqueResultException $e) {
         }
         return 0;
+    }
+
+    /**
+     * @param ChallengeSection $section
+     * @return int|mixed|string|null
+     */
+    public function getFirstChallenge(ChallengeSection $section): ?Challenge
+    {
+        try {
+            $qb = $this->createQueryBuilder('c');
+            return $qb->join('c.category', 'cat', 'WITH', 'cat.section = :section')
+                ->setParameter(':section', $section)
+                ->orderBy('cat.position', 'ASC')
+                ->addOrderBy('c.position', 'ASC')
+                ->setMaxResults(1)
+                ->getQuery()
+                ->getSingleResult();
+
+        } catch (NoResultException $e) {
+        } catch (NonUniqueResultException $e) {
+        }
+        return null;
     }
 
 

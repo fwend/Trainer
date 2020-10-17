@@ -33,6 +33,8 @@ class CategoryController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $category->setPosition($repo->findPosition($section));
+            $category->setSection($section);
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush();

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
+use App\Entity\ChallengeRun;
 use App\Form\ChallengeType;
 use App\Repository\ChallengeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -80,15 +81,15 @@ class ChallengeController extends AbstractController
     }
 
     /**
-     * @Route("/take-challenge/{challenge}", name="take_challenge")
-     * @param Challenge $challenge
+     * @Route("/take-challenge/{run}", name="take_challenge")
+     * @param ChallengeRun $run
      * @return Response
      */
     public function takeChallengeAction(
-        Challenge $challenge)
+        ChallengeRun $run)
     {
         return $this->render('challenge/challenge.html.twig', [
-            'challenge' => $challenge
+            'challenge' => $run->getCurrent()
         ]);
     }
 }

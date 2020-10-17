@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Entity\Challenge;
 use App\Entity\ChallengeRun;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -21,16 +21,20 @@ class ChallengeRunRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Challenge|null
+     * @return ChallengeRun|null
      */
-    public function findRun(): ?Challenge
+    public function findRun(): ?ChallengeRun
     {
         $qb = $this->createQueryBuilder('c');
-        $qb->andWhere($qb->expr()->isNotNull('c.current'))
-            ->orderBy('c.created', 'DESC')
-            ->setMaxResults(1)
-            ->getQuery()
-            ->getResult();
+        try {
+            return $qb->andWhere($qb->expr()->isNotNull('c.current'))
+                ->orderBy('c.created', 'DESC')
+                ->setMaxResults(1)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+        }
+        return null;
     }
 
 }

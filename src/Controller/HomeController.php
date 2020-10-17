@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\ChallengeRun;
+use App\Form\ChallengeRunType;
+use App\Repository\ChallengeRepository;
 use App\Repository\ChallengeRunRepository;
-use App\Repository\ChallengeSectionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,12 +17,16 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="index")
      * @param Request $request
-     * @param ChallengeSectionRepository $repo
+     * @param ChallengeRunRepository $runRepo
+     * @param ChallengeRepository $challengeRepo
      * @return Response
      */
-    public function indexAction(Request $request, ChallengeRunRepository $repo)
+    public function indexAction(
+        Request $request,
+        ChallengeRunRepository $runRepo,
+        ChallengeRepository $challengeRepo)
     {
-        $run = $repo->findRun();
+        $run = $runRepo->findRun();
 
         if (!$run) {
             $form = $this->createForm(ChallengeRunType::class, $run = new ChallengeRun());
@@ -28,10 +34,14 @@ class HomeController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
+                $current = $challengeRepo->getFirstChallenge($run->getSection());
+                $run->setCurrent($current);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($run);
                 $em->flush();
-                return $this->redirectToRoute('index');
+                return $this->redirectToRoute('take_challenge', [
+                    'run' => $run->getId()
+                ]);
             }
 
             return $this->render('home/home.start.html.twig', [
@@ -43,4 +53,15 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/endrun", name="endrun")
+     * @param ChallengeRun $run
+     */
+    public function endRunAction(ChallengeRun $run)
+    {
+        $run->setCurrent(null);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($run);
+        $em->flush();
+    }
 }

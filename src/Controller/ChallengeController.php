@@ -35,13 +35,16 @@ class ChallengeController extends AbstractController
      * @Route("/create-challenge/{category}", name="create_challenge")
      * @param Request $request
      * @param ChallengeCategory $category
+     * @param ChallengeRepository $repo
      * @return Response
      */
     public function createChallengeAction(
         Request $request,
-        Challengecategory $category)
+        ChallengeCategory $category,
+        ChallengeRepository $repo)
     {
         $challenge = (new Challenge())->setCategory($category);
+        $challenge->setPosition($repo->findPosition($category));
         return $this->editChallengeAction($request, $challenge, true);
     }
 

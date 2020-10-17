@@ -1057,155 +1057,210 @@
     <table id="335" parent="7" name="challenge_category">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="336" parent="7" name="challenge_section">
+    <table id="336" parent="7" name="challenge_run">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="337" parent="7" name="doctrine_migration_versions">
+    <table id="337" parent="7" name="challenge_section">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="338" parent="7" name="doctrine_migration_versions">
       <Collation>utf8_unicode_ci</Collation>
     </table>
-    <column id="338" parent="334" name="id">
+    <column id="339" parent="334" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="339" parent="334" name="category_id">
+    <column id="340" parent="334" name="category_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="340" parent="334" name="content">
+    <column id="341" parent="334" name="content">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="341" parent="334" name="answers">
+    <column id="342" parent="334" name="answers">
       <Position>4</Position>
-      <Comment>(DC2Type:array)</Comment>
-      <DataType>longtext|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="342" parent="334" name="link">
+    <column id="343" parent="334" name="link">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="343" parent="334" name="score">
+    <column id="344" parent="334" name="score">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="344" parent="334" name="note">
+    <column id="345" parent="334" name="note">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="345" parent="334" name="created">
+    <column id="346" parent="334" name="created">
       <Position>8</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="346" parent="334" name="modified">
+    <column id="347" parent="334" name="modified">
       <Position>9</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <index id="347" parent="334" name="IDX_D709895112469DE2">
+    <column id="348" parent="334" name="name">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="349" parent="334" name="position">
+      <Position>11</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="350" parent="334" name="IDX_D709895112469DE2">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="348" parent="334" name="PRIMARY">
+    <key id="351" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="349" parent="334" name="FK_D709895112469DE2">
+    <foreign-key id="352" parent="334" name="FK_D709895112469DE2">
       <ColNames>category_id</ColNames>
       <RefTableName>challenge_category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="350" parent="335" name="id">
+    <column id="353" parent="335" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="351" parent="335" name="section_id">
+    <column id="354" parent="335" name="section_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="352" parent="335" name="name">
+    <column id="355" parent="335" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="353" parent="335" name="position">
+    <column id="356" parent="335" name="position">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="354" parent="335" name="created">
+    <column id="357" parent="335" name="created">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="355" parent="335" name="modified">
+    <column id="358" parent="335" name="modified">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <index id="356" parent="335" name="IDX_9B72FE21D823E37A">
+    <index id="359" parent="335" name="IDX_9B72FE21D823E37A">
       <ColNames>section_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="357" parent="335" name="PRIMARY">
+    <key id="360" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="358" parent="335" name="FK_9B72FE21D823E37A">
+    <foreign-key id="361" parent="335" name="FK_9B72FE21D823E37A">
       <ColNames>section_id</ColNames>
       <RefTableName>challenge_section</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="359" parent="336" name="id">
+    <column id="362" parent="336" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="360" parent="336" name="name">
+    <column id="363" parent="336" name="section_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="361" parent="336" name="position">
-      <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="362" parent="336" name="created">
-      <Position>4</Position>
-      <DataType>datetime|0s</DataType>
+    <column id="364" parent="336" name="current_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="363" parent="336" name="modified">
-      <Position>5</Position>
-      <DataType>datetime|0s</DataType>
-    </column>
-    <key id="364" parent="336" name="PRIMARY">
+    <index id="365" parent="336" name="UNIQ_493D09CCF58A7A5C">
+      <ColNames>current_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="366" parent="336" name="IDX_493D09CCD823E37A">
+      <ColNames>section_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="367" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="365" parent="337" name="version">
+    <key id="368" parent="336" name="UNIQ_493D09CCF58A7A5C">
+      <ColNames>current_id</ColNames>
+      <UnderlyingIndexName>UNIQ_493D09CCF58A7A5C</UnderlyingIndexName>
+    </key>
+    <foreign-key id="369" parent="336" name="FK_493D09CCD823E37A">
+      <ColNames>section_id</ColNames>
+      <RefTableName>challenge_section</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="370" parent="336" name="FK_493D09CCF58A7A5C">
+      <ColNames>current_id</ColNames>
+      <RefTableName>challenge</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="371" parent="337" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="372" parent="337" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="373" parent="337" name="position">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="374" parent="337" name="created">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="375" parent="337" name="modified">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="376" parent="337" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="377" parent="338" name="version">
       <Position>1</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="366" parent="337" name="executed_at">
+    <column id="378" parent="338" name="executed_at">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="367" parent="337" name="execution_time">
+    <column id="379" parent="338" name="execution_time">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <key id="368" parent="337" name="PRIMARY">
+    <key id="380" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
       <Primary>1</Primary>

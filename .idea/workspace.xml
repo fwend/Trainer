@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/MenuController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/home.index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201017165414.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201017181701.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/home.start.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e548729a-3bab-4611-a54a-011bed27fe09.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e548729a-3bab-4611-a54a-011bed27fe09.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/MenuController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ChallengeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/category.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/category.index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/section.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/section/section.index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/home.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.continue.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +164,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/challenge" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/home" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -168,15 +172,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\templates\section" />
+      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\templates\home" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\challenge" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\bootstrap" />
       <recent name="C:\Dev\xampp\htdocs\trainer\public\css" />
       <recent name="C:\Dev\xampp\htdocs\trainer" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Dev\xampp\htdocs\trainer\templates\section" />
-      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,7 +222,8 @@
       <workItem from="1602791440739" duration="3841000" />
       <workItem from="1602863565005" duration="157000" />
       <workItem from="1602873990030" duration="10000" />
-      <workItem from="1602882870253" duration="4111000" />
+      <workItem from="1602882870253" duration="4416000" />
+      <workItem from="1602953367086" duration="5373000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -324,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602795880041</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="make menu dynamic">
+      <created>1602889648773</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602889648773</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +361,8 @@
     <MESSAGE value="add challenge" />
     <MESSAGE value="make answers string temporarily" />
     <MESSAGE value="challenge form" />
-    <option name="LAST_COMMIT_MESSAGE" value="challenge form" />
+    <MESSAGE value="make menu dynamic" />
+    <option name="LAST_COMMIT_MESSAGE" value="make menu dynamic" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -361,18 +375,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602052142546" />
-    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1602793166479">
+    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1602958390693">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602793166479" />
+    <state x="753" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602958390693" />
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602884094378">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602884094378" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602795879451">
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602889647912">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602795879451" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602889647912" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -433,10 +447,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1050@0.0.1920.1050" timestamp="1602439492146" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1602795881592">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1602889651289">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602795881592" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602889651289" />
     <state x="859" y="402" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1602051962100">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

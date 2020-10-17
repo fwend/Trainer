@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ChallengeRunRepository;
 use App\Repository\ChallengeSectionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,23 +18,28 @@ class HomeController extends AbstractController
      * @param ChallengeSectionRepository $repo
      * @return Response
      */
-    public function indexAction(Request $request, ChallengeSectionRepository $repo)
+    public function indexAction(Request $request, ChallengeRunRepository $repo)
     {
-//        $sections = $repo->findBy([], ['position' => 'asc']);
-//
-//        $form = $this->createForm(SectionType::class, $section = new ChallengeSection());
-//
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($section);
-//            $em->flush();
-//            return $this->redirectToRoute('index');
-//        }
-//
-        return $this->render('home/home.index.html.twig', [
-//            'form' => $form->createView()
+        $run = $repo->findRun();
+
+        if (!$run) {
+            $form = $this->createForm(ChallengeRunType::class, $run = new ChallengeRun());
+
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($run);
+                $em->flush();
+                return $this->redirectToRoute('index');
+            }
+
+            return $this->render('home/home.start.html.twig', [
+                'form' => $form->createView()
+            ]);
+        }
+        return $this->render('home/home.continue.html.twig', [
+            'run' => $run
         ]);
     }
 

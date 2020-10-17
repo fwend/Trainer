@@ -17,16 +17,18 @@
         {% if challenges|length %}
             <div class="row mt-5">
                 {% set half = (challenges|length) / 2|round(0, 'ceil') %}
-                {% for column in challenges|batch(half, '') %}
+                {% for column in challenges|batch(half, null) %}
                     <div class="col">
                         <ul class="list-group">
                             {% for challenge in column %}
-                                <li class="list-group-item list-group-item-action">
-                                    <div class="d-flex justify-content-between">
-                                        <a href="{{ path('take_challenge', {'challenge': challenge.id}) }}">{{ challenge }}</a>
-                                        <a href="{{ path('edit_challenge', {'challenge': challenge.id}) }}">edit</a>
-                                    </div>
-                                </li>
+                                {% if challenge %}
+                                    <li class="list-group-item list-group-item-action">
+                                        <div class="d-flex justify-content-between">
+                                            <a href="{{ path('take_challenge', {'challenge': challenge.id}) }}">{{ challenge }}</a>
+                                            <a href="{{ path('edit_challenge', {'challenge': challenge.id}) }}">edit</a>
+                                        </div>
+                                    </li>
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </div>

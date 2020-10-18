@@ -2,7 +2,6 @@
 
 {% block title %}Trainer{% endblock %}
 
-
 {% block body %}
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <ul class="navbar-nav">
@@ -14,8 +13,12 @@
             </li>
         </ul>
     </nav>
-    <div class="row mt-5">
-        continue/clear
+    <div class="mt-5">
+        <a href="{{ path('endrun', {'run': run.id}) }}"
+           class="btn btn-primary mr-2" type="submit" style="width: 5rem">
+            clear
+        </a>
+        <a href="{{ path('take_challenge', {'run': run.id}) }}" class="btn btn-primary" type="submit">continue</a>
     </div>
 {% endblock %}
 

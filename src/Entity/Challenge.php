@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ChallengeRepository;
 use App\Traits\NameTrait;
+use App\Traits\PositionTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Challenge extends Entity
 {
-    use NameTrait;
+    use NameTrait, PositionTrait;
 
     /**
      * @ORM\Id
@@ -50,11 +51,6 @@ class Challenge extends Entity
      * @ORM\JoinColumn(nullable=false)
      */
     private ChallengeCategory $category;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $position;
 
     public function getId(): ?int
     {
@@ -137,15 +133,4 @@ class Challenge extends Entity
         return $this->category->getSection();
     }
 
-    public function getPosition(): ?int
-    {
-        return $this->position;
-    }
-
-    public function setPosition(int $position): self
-    {
-        $this->position = $position;
-
-        return $this;
-    }
 }

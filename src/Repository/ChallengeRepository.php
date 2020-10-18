@@ -38,21 +38,60 @@ class ChallengeRepository extends ServiceEntityRepository
                 ->getSingleScalarResult();
         } catch (NoResultException|NonUniqueResultException $e) {
         }
-        return 0;
+        return -1;
     }
 
     /**
      * @param ChallengeSection $section
      * @return int|mixed|string|null
      */
-    public function getFirstChallenge(ChallengeSection $section): ?Challenge
+    public function findFirstFromSection(ChallengeSection $section): ?Challenge
     {
         try {
-            $qb = $this->createQueryBuilder('c');
-            return $qb->join('c.category', 'cat', 'WITH', 'cat.section = :section')
+            return $this->createQueryBuilder('c')
+                ->join('c.category', 'cat', 'WITH', 'cat.section = :section')
                 ->setParameter(':section', $section)
                 ->orderBy('cat.position', 'ASC')
                 ->addOrderBy('c.position', 'ASC')
+                ->setMaxResults(1)
+                ->getQuery()
+                ->getSingleResult();
+
+        } catch (NoResultException $e) {
+        } catch (NonUniqueResultException $e) {
+        }
+        return null;
+    }
+
+    /**
+     * @param ChallengeCategory $category
+     * @return int|mixed|string|null
+     */
+    public function findFirstFromCategory(ChallengeCategory $category): ?Challenge
+    {
+        try {
+            return $this->createQueryBuilder('c')
+                ->join('c.category', 'cat', 'WITH', 'cat.id = :category')
+                ->setParameter(':category', $category)
+                ->addOrderBy('c.position', 'ASC')
+                ->setMaxResults(1)
+                ->getQuery()
+                ->getSingleResult();
+
+        } catch (NoResultException $e) {
+        } catch (NonUniqueResultException $e) {
+        }
+        return null;
+    }
+
+    public function findNextChallenge(Challenge $challenge)
+    {
+        try {
+            $qb = $this->createQueryBuilder('c');
+            return $qb->join('c.category', 'cat', 'WITH', 'cat.id = :category')
+                ->andWhere($qb->expr()->eq('c.position', ':position'))
+                ->setParameter(':category', $challenge->getCategory())
+                ->setParameter(':position', $challenge->getPosition() + 1)
                 ->setMaxResults(1)
                 ->getQuery()
                 ->getSingleResult();

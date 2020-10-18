@@ -6,6 +6,8 @@ use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeRun;
 use App\Form\ChallengeType;
+use App\Form\TakeChallengeType;
+use App\Repository\ChallengeCategoryRepository;
 use App\Repository\ChallengeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -82,14 +84,63 @@ class ChallengeController extends AbstractController
 
     /**
      * @Route("/take-challenge/{run}", name="take_challenge")
+     * @param Request $request
      * @param ChallengeRun $run
+     * @param ChallengeRepository $challengeRepo
+     * @param ChallengeCategoryRepository $challengeCategoryRepo
      * @return Response
      */
     public function takeChallengeAction(
-        ChallengeRun $run)
+        Request $request,
+        ChallengeRun $run,
+        ChallengeRepository $challengeRepo,
+        ChallengeCategoryRepository $challengeCategoryRepo)
     {
+        $curr = $run->getCurrent();
+        if (!$curr) {
+            return $this->redirectToRoute('index');
+        }
+
+        $form = $this->createForm(TakeChallengeType::class, null);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $next = $this->findNextChallenge($curr, $challengeRepo, $challengeCategoryRepo);
+
+            $run->setCurrent($next);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($run);
+            $em->flush();
+
+            if (!$next) {
+                return $this->render('challenge/challenge.done.html.twig');
+            }
+            return $this->render('challenge/challenge.result.html.twig', [
+                'challenge' => $curr,
+                'answer' => $form->get('answer')->getData(),
+                'run' => $run
+            ]);
+        }
+
         return $this->render('challenge/challenge.html.twig', [
-            'challenge' => $run->getCurrent()
+            'challenge' => $curr,
+            'form' => $form->createView()
         ]);
+    }
+
+    private function findNextChallenge(
+        Challenge $current,
+        ChallengeRepository $challengeRepo,
+        ChallengeCategoryRepository $challengeCategoryRepo)
+    {
+        $next = $challengeRepo->findNextChallenge($current);
+        if (!$next) {
+            $nextCategory = $challengeCategoryRepo->findNextCategory($current->getCategory());
+            if ($nextCategory) {
+                $next = $challengeRepo->findFirstFromCategory($nextCategory);
+            }
+        }
+        return $next;
     }
 }

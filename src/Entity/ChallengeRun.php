@@ -24,9 +24,9 @@ class ChallengeRun extends Entity
 
     /**
      * @ORM\OneToOne(targetEntity=Challenge::class, cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
-    private Challenge $current;
+    private ?Challenge $current;
 
     public function getId(): ?int
     {
@@ -56,11 +56,10 @@ class ChallengeRun extends Entity
         return $this->current;
     }
 
-    public function setCurrent(Challenge $current): self
+    public function setCurrent(?Challenge $current): self
     {
         $this->current = $current;
 
         return $this;
     }
-
 }

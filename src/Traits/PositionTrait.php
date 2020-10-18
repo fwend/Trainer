@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 trait PositionTrait
 {
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=false)
      */
     private ?int $position;
 

@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/TakeChallengeType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ChallengeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Traits/PositionTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/PositionTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TakeChallengeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TakeChallengeType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.continue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.continue.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/home.start.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.start.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +225,9 @@
       <workItem from="1602953367086" duration="7873000" />
       <workItem from="1602968691195" duration="7489000" />
       <workItem from="1602977264991" duration="51000" />
-      <workItem from="1603007234381" duration="14084000" />
+      <workItem from="1603007234381" duration="14121000" />
+      <workItem from="1603034435291" duration="696000" />
+      <workItem from="1603052051114" duration="2691000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -360,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602977304936</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="take challenge type">
+      <created>1603028067518</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1603028067518</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +389,8 @@
     <MESSAGE value="make menu dynamic" />
     <MESSAGE value="add challenge run" />
     <MESSAGE value="select challenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="select challenge" />
+    <MESSAGE value="take challenge type" />
+    <option name="LAST_COMMIT_MESSAGE" value="take challenge type" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -416,10 +419,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="900" y="456" key="#xdebugger.evaluate/0.0.1920.1050@0.0.1920.1050" timestamp="1602974786169" />
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1602977304059">
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2" timestamp="1603028066702">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602977304059" />
+    <state x="536" y="112" width="975" height="826" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1603028066702" />
     <state x="736" y="437" key="ComposerInitDialogKey" timestamp="1602015584530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -444,54 +447,54 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="838" y="423" key="Github.ShareDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602099671737" />
-    <state width="1877" height="399" key="GridCell.Tab.0.bottom" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.0.bottom" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.0.center" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.0.center" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.0.left" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.0.left" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.0.right" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.0.right" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.1.bottom" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.1.bottom" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.1.center" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.1.center" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.1.left" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.1.left" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.1.right" timestamp="1603027044158">
+    <state width="1877" height="399" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.1.right" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044158" />
-    <state width="1877" height="399" key="GridCell.Tab.2.bottom" timestamp="1603027044159">
+    <state width="1877" height="399" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.2.bottom" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044159" />
-    <state width="1877" height="399" key="GridCell.Tab.2.center" timestamp="1603027044159">
+    <state width="1877" height="399" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.2.center" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044159" />
-    <state width="1877" height="399" key="GridCell.Tab.2.left" timestamp="1603027044159">
+    <state width="1877" height="399" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.2.left" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044159" />
-    <state width="1877" height="399" key="GridCell.Tab.2.right" timestamp="1603027044159">
+    <state width="1877" height="399" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
+    <state width="1877" height="399" key="GridCell.Tab.2.right" timestamp="1603028077379">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="399" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603027044159" />
+    <state width="1877" height="399" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603028077379" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1602052058785">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -512,10 +515,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1050@0.0.1920.1050" timestamp="1602439492146" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1602977309077">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1603028069071">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602977309077" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1603028069071" />
     <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1602974005437">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

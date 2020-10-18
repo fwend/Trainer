@@ -98,7 +98,7 @@ class ChallengeController extends AbstractController
     {
         $curr = $run->getCurrent();
         if (!$curr) {
-            return $this->redirectToRoute('index');
+            return $this->render('challenge/challenge.done.html.twig');
         }
 
         $form = $this->createForm(TakeChallengeType::class, null);
@@ -113,9 +113,6 @@ class ChallengeController extends AbstractController
             $em->persist($run);
             $em->flush();
 
-            if (!$next) {
-                return $this->render('challenge/challenge.done.html.twig');
-            }
             return $this->render('challenge/challenge.result.html.twig', [
                 'challenge' => $curr,
                 'answer' => $form->get('answer')->getData(),

@@ -4,7 +4,7 @@
 
 {% block body %}
     {{ parent() }}
-    <div class="mt-5 mb-5">
+    <div class="mt-5 mb-5 mx-5">
 
         <div class="d-flex justify-content-between">
             <h4>{{ category }} challenges</h4>
@@ -24,7 +24,8 @@
                                 {% if challenge %}
                                     <li class="list-group-item list-group-item-action">
                                         <div class="d-flex justify-content-between">
-                                            <a href="{{ path('take_challenge', {'challenge': challenge.id}) }}">{{ challenge }}</a>
+                                            <a href="#">{{ challenge }}</a>
+                                            {# <a href="{{ path('take_challenge', {'challenge': challenge.id}) }}">{{ challenge }}</a> #}
                                             <a href="{{ path('edit_challenge', {'challenge': challenge.id}) }}">edit</a>
                                         </div>
                                     </li>

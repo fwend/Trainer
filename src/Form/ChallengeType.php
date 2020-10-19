@@ -22,7 +22,7 @@ class ChallengeType extends AbstractType
             ->add('link', TextType::class, [
                 'required' => false
             ])
-            ->add('note', TextType::class, [
+            ->add('note', TextareaType::class, [
                 'required' => false
             ]);
     }

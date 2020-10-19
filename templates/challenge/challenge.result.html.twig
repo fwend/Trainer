@@ -4,26 +4,37 @@
 
 {% block body %}
     {{ parent() }}
-    <div class="mt-5">
+    <div class="mt-5 mx-5">
         <div class="mt-3 card">
             <div class="card-header">
-                {{ challenge.category.section }}: {{ challenge.category }}
+                <div class="d-flex justify-content-between">
+                    <span class="text-lowercase">{{ challenge.category.section }} / {{ challenge.category }} / {{ challenge }}</span>
+                    {% if challenge.link %}
+                        <a href="{{ challenge.link }}" class="card-link">{{ challenge.category }} man page</a>
+                    {% endif %}
+                </div>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ challenge }} result</h5>
-                <p class="card-text">{{ challenge.content }}</p>
-                <p class="card-text"><span class="font-weight-bold">Possible answer</span>: {{ challenge.answers }}</p>
-                {# {% if challenge.link %} #}
-                <a href="{{ challenge.link }}" class="card-link">man page</a>
-                {# {% endif %} #}
+                <p class="card-text"><span class="font-weight-bold">Result for</span>: {{ challenge.content }}</p>
+                <div class="card-text row mt-5">
+                    <p class="font-weight-bold col-2">Possible answer</p>
+                    <p class="col-10">{{ challenge.answers }}</p>
+                </div>
+                <div class="card-text row">
+                    <p class="font-weight-bold col-2">Your answer</p>
+                    <p class="col-10"> {{ answer }}</p>
+                </div>
             </div>
         </div>
-        <div class="mt-3">
-            <p>Your answer</p>
-            {{ answer }}
-        </div>
+        {% if challenge.note %}
+            <div class="mt-3">
+                <div class="alert alert-light">
+                    Note: {{ challenge.note }}
+                </div>
+            </div>
+        {% endif %}
         <div class="float-right mt-2">
-            <a href="{{ path('take_challenge', {'run' : run.id}) }}" class="btn btn-primary">next</a>
+            <a href="{{ path('take_challenge', {'run' : run.id}) }}" class="btn btn-primary">next challenge</a>
         </div>
     </div>
 {% endblock %}

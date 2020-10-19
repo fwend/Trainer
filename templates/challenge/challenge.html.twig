@@ -5,24 +5,25 @@
 {% block body %}
     {{ parent() }}
     {{ form_start(form) }}
-    <div class="mt-5">
+    <div class="mt-5 mx-5">
         <div class="mt-3 card">
             <div class="card-header">
-                {{ challenge.category.section }}: {{ challenge.category }}
+                <div class="d-flex justify-content-between">
+                    <span class="text-lowercase">{{ challenge.category.section }} / {{ challenge.category }} / {{ challenge }}</span>
+                    {% if challenge.link %}
+                        <a href="{{ challenge.link }}" class="card-link">{{ challenge.category }} man page</a>
+                    {% endif %}
+                </div>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ challenge }}</h5>
                 <p class="card-text">{{ challenge.content }}</p>
-                {# {% if challenge.link %} #}
-                <a href="{{ challenge.link }}" class="card-link">man page</a>
-                {# {% endif %} #}
+                <div class="mt-5">
+                    {{ form_row(form.answer) }}
+                </div>
             </div>
         </div>
-        <div class="mt-3">
-            {{ form_row(form.answer) }}
-        </div>
         <div class="float-right mt-2">
-            <button class="btn btn-primary" type="submit">submit</button>
+            <button class="btn btn-primary" type="submit">submit answer</button>
         </div>
     </div>
     {{ form_end(form) }}

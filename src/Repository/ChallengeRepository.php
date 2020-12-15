@@ -57,8 +57,7 @@ class ChallengeRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getSingleResult();
 
-        } catch (NoResultException $e) {
-        } catch (NonUniqueResultException $e) {
+        } catch (NoResultException | NonUniqueResultException $e) {
         }
         return null;
     }
@@ -78,8 +77,7 @@ class ChallengeRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getSingleResult();
 
-        } catch (NoResultException $e) {
-        } catch (NonUniqueResultException $e) {
+        } catch (NoResultException | NonUniqueResultException $e) {
         }
         return null;
     }
@@ -96,8 +94,7 @@ class ChallengeRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getSingleResult();
 
-        } catch (NoResultException $e) {
-        } catch (NonUniqueResultException $e) {
+        } catch (NoResultException | NonUniqueResultException $e) {
         }
         return null;
     }

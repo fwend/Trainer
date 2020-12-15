@@ -21,7 +21,7 @@ class SectionController extends AbstractController
      * @param ChallengeSectionRepository $repo
      * @return Response
      */
-    public function indexAction(Request $request, ChallengeSectionRepository $repo)
+    public function indexAction(Request $request, ChallengeSectionRepository $repo): Response
     {
         $sections = $repo->findBy([], ['position' => 'asc']);
 

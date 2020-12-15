@@ -14,7 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-
     /**
      * @Route("/", name="index")
      * @param Request $request
@@ -25,7 +24,7 @@ class HomeController extends AbstractController
     public function indexAction(
         Request $request,
         ChallengeRunRepository $runRepo,
-        ChallengeRepository $challengeRepo)
+        ChallengeRepository $challengeRepo): Response
     {
         $run = $runRepo->findRun();
 
@@ -59,7 +58,7 @@ class HomeController extends AbstractController
      * @param ChallengeRun $run
      * @return RedirectResponse
      */
-    public function endRunAction(ChallengeRun $run)
+    public function endRunAction(ChallengeRun $run): RedirectResponse
     {
         $run->setCurrent(null);
         $em = $this->getDoctrine()->getManager();

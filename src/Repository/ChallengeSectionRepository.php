@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\ChallengeSection;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -47,4 +48,11 @@ class ChallengeSectionRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function test()
+    {
+        $criteria = Criteria::create()
+            ->andWhere(Criteria::expr()->eq('', ''))
+            ->orderBy(['' => Criteria::ASC]);
+    }
 }

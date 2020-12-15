@@ -53,8 +53,7 @@ class ChallengeCategoryRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getSingleResult();
 
-        } catch (NoResultException $e) {
-        } catch (NonUniqueResultException $e) {
+        } catch (NoResultException | NonUniqueResultException $e) {
         }
         return null;
     }

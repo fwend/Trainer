@@ -44,7 +44,7 @@ class ChallengeController extends AbstractController
     public function createChallengeAction(
         Request $request,
         ChallengeCategory $category,
-        ChallengeRepository $repo)
+        ChallengeRepository $repo): Response
     {
         $challenge = (new Challenge())->setCategory($category);
         $challenge->setPosition($repo->findPosition($category));
@@ -61,7 +61,7 @@ class ChallengeController extends AbstractController
     public function editChallengeAction(
         Request $request,
         Challenge $challenge,
-        bool $adding = false)
+        bool $adding = false): Response
     {
         $form = $this->createForm(ChallengeType::class, $challenge);
 
@@ -94,7 +94,7 @@ class ChallengeController extends AbstractController
         Request $request,
         ChallengeRun $run,
         ChallengeRepository $challengeRepo,
-        ChallengeCategoryRepository $challengeCategoryRepo)
+        ChallengeCategoryRepository $challengeCategoryRepo): Response
     {
         $curr = $run->getCurrent();
         if (!$curr) {
@@ -126,6 +126,12 @@ class ChallengeController extends AbstractController
         ]);
     }
 
+    /**
+     * @param Challenge $current
+     * @param ChallengeRepository $challengeRepo
+     * @param ChallengeCategoryRepository $challengeCategoryRepo
+     * @return Challenge|int|mixed|string|null
+     */
     private function findNextChallenge(
         Challenge $current,
         ChallengeRepository $challengeRepo,

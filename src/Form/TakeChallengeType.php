@@ -13,7 +13,9 @@ class TakeChallengeType extends AbstractType
     {
         $builder
             ->add('answer', TextType::class, [
-                'label' => 'Your answer']);
+                'label' => 'Your answer',
+                'attr' => ['autocomplete' => 'off']
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

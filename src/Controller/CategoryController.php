@@ -6,7 +6,6 @@ use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
 use App\Form\CategoryType;
 use App\Repository\ChallengeCategoryRepository;
-use Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -54,10 +53,10 @@ class CategoryController extends AbstractController
      * @Route("/categories/edit/{category}", name="edit_category")
      *
      * @param Request $request
-     * @param Category $category
+     * @param ChallengeCategory $category
      * @return Response
      */
-    public function editCategoryAction(Request $request, Category $category): Response
+    public function editCategoryAction(Request $request, ChallengeCategory $category): Response
     {
         return new Response('todo');
     }

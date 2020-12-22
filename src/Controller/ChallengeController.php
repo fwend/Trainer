@@ -24,7 +24,7 @@ class ChallengeController extends AbstractController
      */
     public function indexAction(
         ChallengeCategory $category,
-        ChallengeRepository $repo)
+        ChallengeRepository $repo): Response
     {
         $challenges = $repo->findBy(['category' => $category], ['name' => 'asc']);
 

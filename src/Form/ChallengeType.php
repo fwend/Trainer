@@ -21,8 +21,10 @@ class ChallengeType extends AbstractType
             ])
             ->add('answers', CollectionType::class, [
                 'entry_type' => TextType::class,
+                'label' => false,
                 'allow_add' => true,
-                'allow_delete' => true
+                'allow_delete' => true,
+                'prototype' => true
             ])
             ->add('link', TextType::class, [
                 'required' => false

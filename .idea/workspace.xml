@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TakeChallengeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TakeChallengeType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/category.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/category.index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.continue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.continue.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/section/section.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/section/section.index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChallengeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChallengeType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +240,7 @@
       <workItem from="1608315296125" duration="614000" />
       <workItem from="1608394203664" duration="1496000" />
       <workItem from="1608636168917" duration="72000" />
-      <workItem from="1608636254147" duration="3431000" />
+      <workItem from="1608636254147" duration="4772000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -400,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608073644260</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix css, cat argument">
+      <created>1608642741550</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1608642741550</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +434,8 @@
     <MESSAGE value="improve presentation a bit" />
     <MESSAGE value="improve presentation some more" />
     <MESSAGE value="some cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="some cleanup" />
+    <MESSAGE value="fix css, cat argument" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix css, cat argument" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ChallengeRepository;
 use App\Traits\NameTrait;
 use App\Traits\PositionTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,6 +15,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Challenge extends Entity
 {
     use NameTrait, PositionTrait;
+
+    public function __construct()
+    {
+        $this->answers = new ArrayCollection();
+    }
 
     /**
      * @ORM\Id
@@ -27,9 +34,9 @@ class Challenge extends Entity
     private string $content;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="array")
      */
-    private ?string $answers;
+    private ?Collection $answers;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -69,12 +76,19 @@ class Challenge extends Entity
         return $this;
     }
 
-    public function getAnswers(): ?string
+    /**
+     * @return Collection|null
+     */
+    public function getAnswers(): ?Collection
     {
         return $this->answers;
     }
 
-    public function setAnswers(?string $answers): Challenge
+    /**
+     * @param Collection $answers
+     * @return Challenge
+     */
+    public function setAnswers(Collection $answers): Challenge
     {
         $this->answers = $answers;
         return $this;

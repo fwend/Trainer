@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Challenge;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,7 +19,11 @@ class ChallengeType extends AbstractType
             ->add('content', TextareaType::class, [
                 'attr' => ['rows' => 5]
             ])
-            ->add('answers')
+            ->add('answers', CollectionType::class, [
+                'entry_type' => TextType::class,
+                'allow_add' => true,
+                'allow_delete' => true
+            ])
             ->add('link', TextType::class, [
                 'required' => false
             ])

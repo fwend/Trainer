@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ChallengeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ChallengeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ChallengeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChallengeType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,7 +240,7 @@
       <workItem from="1608636254147" duration="13338000" />
       <workItem from="1608653980214" duration="4099000" />
       <workItem from="1608717167794" duration="13797000" />
-      <workItem from="1608733930541" duration="1260000" />
+      <workItem from="1608733930541" duration="1277000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -428,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608656000826</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add collectiontype template">
+      <created>1608742393919</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1608742393919</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +458,8 @@
     <MESSAGE value="fix css, cat argument" />
     <MESSAGE value="migrate to collection type" />
     <MESSAGE value="add collectiontype" />
-    <option name="LAST_COMMIT_MESSAGE" value="add collectiontype" />
+    <MESSAGE value="add collectiontype template" />
+    <option name="LAST_COMMIT_MESSAGE" value="add collectiontype template" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

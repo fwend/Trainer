@@ -135,7 +135,7 @@ class Challenge extends Entity
         return $this;
     }
 
-    public function getSection()
+    public function getSection(): ?ChallengeSection
     {
         return $this->category->getSection();
     }

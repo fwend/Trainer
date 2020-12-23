@@ -40,4 +40,9 @@ class ChallengeType extends AbstractType
             'data_class' => Challenge::class,
         ]);
     }
+
+    public function getBlockPrefix(): string
+    {
+        return "answer_widget";
+    }
 }

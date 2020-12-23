@@ -2,7 +2,9 @@
 
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{% block title %}{{ adding ? 'Add' : 'Edit' }} Challenge - {{ challenge.category.section }} - {{ challenge.category }}{% endblock %}
+{% block title %}
+    {{ adding ? 'Add' : 'Edit' }} Challenge - {{ challenge.category.section }} - {{ challenge.category }}
+{% endblock %}
 
 {% block body %}
     {{ parent() }}
@@ -18,17 +20,24 @@
                 {{ form_row(form.name) }}
                 {{ form_row(form.content) }}
 
-                {{ form_label(form.answers) }}
+                <div class="d-flex justify-content-between mb-3">
+                    <label class="required">Answers</label>
+                    <button class="btn btn-primary" type="button" id="challenge_add_answer">Add an answer</button>
+                </div>
 
                 <div id="challenge_answers"
+                     class="mb-3"
                      data-prototype="{{ form_widget(form.answers.vars.prototype)|e('html_attr') }}">
 
                     {% for answer in form.answers %}
-                        {{ form_widget(answer) }}
+                        <div data-delete-target class="answer row mt-1">
+                            <div class="col-11">{{ form_widget(answer) }}</div>
+                            <div class="col-1">
+                                <button data-delete-button class="btn btn-secondary" type="button">x</button>
+                            </div>
+                        </div>
                     {% endfor %}
                 </div>
-
-                <button class="btn-btn-primary" type="button" id="challenge_add_answer">Add an answer</button>
 
                 {{ form_row(form.link) }}
                 {{ form_row(form.note) }}

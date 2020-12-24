@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 // php bin/console do:fi:lo
 
-class TrainerFixtures extends Fixture
+class AppFixtures extends Fixture
 {
     /**
      * @param ObjectManager $manager

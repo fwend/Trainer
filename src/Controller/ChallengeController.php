@@ -104,7 +104,7 @@ class ChallengeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $next = $selector->findNextChallenge($curr, $run);
+            $next = $selector->findNext($curr, $run);
 
             // null is valid here, it means the run is over
             $run->setCurrent($next);

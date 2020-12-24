@@ -52,7 +52,7 @@ class ChallengeSelector
      * @param ChallengeRun $run
      * @return Challenge|null
      */
-    public function findNextChallenge(
+    public function findNext(
         Challenge $current,
         ChallengeRun $run): ?Challenge
     {

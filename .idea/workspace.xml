@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RunHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RunHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ChallengeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TrainerFixtures.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/ChallengeSelector.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ChallengeSelector.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +253,7 @@
       <workItem from="1608797848993" duration="20378000" />
       <workItem from="1608827891295" duration="663000" />
       <workItem from="1608828572067" duration="1255000" />
-      <workItem from="1608830822435" duration="2605000" />
+      <workItem from="1608830822435" duration="3287000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -555,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608823295202</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="get random">
+      <created>1608833585983</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1608833585983</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +566,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="select challenge" />
     <MESSAGE value="take challenge type" />
     <MESSAGE value="improve presentation a bit" />
     <MESSAGE value="improve presentation some more" />
@@ -590,7 +590,8 @@
     <MESSAGE value="random find first" />
     <MESSAGE value="challenge selector" />
     <MESSAGE value="run history" />
-    <option name="LAST_COMMIT_MESSAGE" value="run history" />
+    <MESSAGE value="get random" />
+    <option name="LAST_COMMIT_MESSAGE" value="get random" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

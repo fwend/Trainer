@@ -15,13 +15,6 @@ class Challenge extends Entity
     use NameTrait, PositionTrait;
 
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private int $id;
-
-    /**
      * @ORM\Column(type="text")
      */
     private string $content;

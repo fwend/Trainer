@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/TrainerFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201224094217.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201224095624.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/RunMode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TrainerFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/TrainerFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Challenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +256,7 @@
       <workItem from="1608733930541" duration="1277000" />
       <workItem from="1608766232815" duration="1312000" />
       <workItem from="1608773991794" duration="4342000" />
-      <workItem from="1608797848993" duration="4044000" />
+      <workItem from="1608797848993" duration="5957000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -484,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608801553061</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="installed datafixtures">
+      <created>1608802211557</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1608802211557</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +506,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add category controller" />
     <MESSAGE value="add category form" />
     <MESSAGE value="challenge controller" />
     <MESSAGE value="horizontal form" />
@@ -519,7 +530,8 @@
     <MESSAGE value="include all answers in loop" />
     <MESSAGE value="category edit" />
     <MESSAGE value="todos" />
-    <option name="LAST_COMMIT_MESSAGE" value="todos" />
+    <MESSAGE value="installed datafixtures" />
+    <option name="LAST_COMMIT_MESSAGE" value="installed datafixtures" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

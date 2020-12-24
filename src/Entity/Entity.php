@@ -10,6 +10,13 @@ use Symfony\Component\PropertyAccess\PropertyAccessor;
 
 abstract class Entity
 {
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    protected int $id;
+
     protected ?PropertyAccessor $propertyAccessor = null;
 
     /**

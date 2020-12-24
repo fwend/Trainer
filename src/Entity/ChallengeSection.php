@@ -17,13 +17,6 @@ class ChallengeSection extends Entity
     use PositionTrait, NameTrait;
 
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private int $id;
-
-    /**
      * @ORM\OneToMany(targetEntity=ChallengeCategory::class, mappedBy="section")
      */
     private Collection $categories;

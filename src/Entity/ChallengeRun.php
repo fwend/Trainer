@@ -11,15 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class ChallengeRun extends Entity
 {
     // TODO user
-    // TODO mode
     // TODO delete when done
-
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private int $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=ChallengeSection::class)
@@ -31,6 +23,11 @@ class ChallengeRun extends Entity
      * @ORM\JoinColumn(nullable=true)
      */
     private ?Challenge $current;
+
+    /**
+     * @ORM\OneToOne(targetEntity=RunMode::class)
+     */
+    private ?Challenge $mode;
 
     public function getId(): ?int
     {
@@ -64,6 +61,24 @@ class ChallengeRun extends Entity
     {
         $this->current = $current;
 
+        return $this;
+    }
+
+    /**
+     * @return Challenge|null
+     */
+    public function getMode(): ?Challenge
+    {
+        return $this->mode;
+    }
+
+    /**
+     * @param Challenge $mode
+     * @return ChallengeRun
+     */
+    public function setMode(Challenge $mode): ChallengeRun
+    {
+        $this->mode = $mode;
         return $this;
     }
 }

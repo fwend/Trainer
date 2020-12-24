@@ -17,13 +17,6 @@ class ChallengeCategory extends Entity
     use PositionTrait, NameTrait;
 
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private int $id;
-
-    /**
      * @ORM\OneToMany(targetEntity=Challenge::class, mappedBy="category")
      */
     private Collection $challenge;

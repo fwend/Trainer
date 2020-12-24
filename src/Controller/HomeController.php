@@ -4,8 +4,6 @@ namespace App\Controller;
 
 use App\Entity\ChallengeRun;
 use App\Form\ChallengeRunType;
-use App\Repository\ChallengeCategoryRepository;
-use App\Repository\ChallengeRepository;
 use App\Repository\ChallengeRunRepository;
 use App\Services\ChallengeSelector;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,8 +21,6 @@ class HomeController extends AbstractController
      * @Route("/", name="index")
      * @param Request $request
      * @param ChallengeRunRepository $runRepo
-     * @param ChallengeRepository $challengeRepo
-     * @param ChallengeCategoryRepository $categoryRepo
      * @param ChallengeSelector $selector
      * @return Response
      */

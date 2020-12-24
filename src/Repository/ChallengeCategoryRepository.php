@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
+use App\Entity\RunHistory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -66,9 +67,12 @@ class ChallengeCategoryRepository extends ServiceEntityRepository
 
     /**
      * @param ChallengeSection $section
+     * @param RunHistory $runHistory
      * @return ChallengeCategory|null
      */
-    public function findRandomCategory(ChallengeSection $section): ?ChallengeCategory
+    public function findRandomCategory(
+        ChallengeSection $section,
+        RunHistory $runHistory): ?ChallengeCategory
     {
         $qb = $this->createQueryBuilder('c');
         $qb->andWhere($qb->expr()->eq('c.section', ':section'))
@@ -76,10 +80,19 @@ class ChallengeCategoryRepository extends ServiceEntityRepository
 
         $result = $qb->getQuery()->getResult();
         if ($result && is_array($result) && shuffle($result)) {
-            /** @var ChallengeCategory $item */
-            foreach ($result as $item) {
-                if ($item->getChallenge()->count()) { // skip empty
-                    return $item;
+            $alreadyDone = $runHistory->getChallenges();
+
+            /** @var ChallengeCategory $cat */
+            foreach ($result as $cat) {
+
+                // skip empty or already done
+                if ($cat->getChallenge()->count()) {
+
+                    foreach ($cat->getChallenge() as $c) {
+                        if (!$alreadyDone->contains($c)) {
+                            return $cat;
+                        }
+                    }
                 }
             }
         }

@@ -11,7 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
 class ChallengeRun extends Entity
 {
     // TODO user
-    // TODO delete when done
 
     /**
      * @ORM\ManyToOne(targetEntity=ChallengeSection::class)
@@ -33,6 +32,11 @@ class ChallengeRun extends Entity
      * @ORM\Column(type="integer")
      */
     private ?int $count = 0;
+
+    /**
+     * @ORM\OneToOne(targetEntity=RunHistory::class, mappedBy="run", cascade={"persist", "remove"})
+     */
+    private ?RunHistory $runHistory;
 
     public function getId(): ?int
     {
@@ -108,5 +112,22 @@ class ChallengeRun extends Entity
     public function incrementCount()
     {
         $this->count++;
+    }
+
+    public function getRunHistory(): ?RunHistory
+    {
+        return $this->runHistory;
+    }
+
+    public function setRunHistory(RunHistory $runHistory): self
+    {
+        $this->runHistory = $runHistory;
+
+        // set the owning side of the relation if necessary
+        if ($runHistory->getRun() !== $this) {
+            $runHistory->setRun($this);
+        }
+
+        return $this;
     }
 }

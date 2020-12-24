@@ -10,6 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ChallengeRun extends Entity
 {
+    // TODO user
+    // TODO mode
+    // TODO delete when done
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

@@ -14,6 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    // TODO user login
+    // TODO easy admin
+    // TODO softdelete
+
     /**
      * @Route("/", name="index")
      * @param Request $request

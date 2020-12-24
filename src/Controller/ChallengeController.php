@@ -5,11 +5,10 @@ namespace App\Controller;
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeRun;
-use App\Entity\RunMode;
 use App\Form\ChallengeType;
 use App\Form\TakeChallengeType;
-use App\Repository\ChallengeCategoryRepository;
 use App\Repository\ChallengeRepository;
+use App\Services\ChallengeSelector;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -87,15 +86,13 @@ class ChallengeController extends AbstractController
      * @Route("/take-challenge/{run}", name="take_challenge")
      * @param Request $request
      * @param ChallengeRun $run
-     * @param ChallengeRepository $challengeRepo
-     * @param ChallengeCategoryRepository $challengeCategoryRepo
+     * @param ChallengeSelector $selector
      * @return Response
      */
     public function takeChallengeAction(
         Request $request,
         ChallengeRun $run,
-        ChallengeRepository $challengeRepo,
-        ChallengeCategoryRepository $challengeCategoryRepo): Response
+        ChallengeSelector $selector): Response
     {
         $curr = $run->getCurrent();
         if (!$curr) {
@@ -107,7 +104,7 @@ class ChallengeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $next = $this->findNextChallenge($curr, $challengeRepo, $challengeCategoryRepo, $run);
+            $next = $selector->findNextChallenge($curr, $run);
 
             // null is valid here, it means the run is over
             $run->setCurrent($next);
@@ -127,51 +124,5 @@ class ChallengeController extends AbstractController
             'challenge' => $curr,
             'form' => $form->createView()
         ]);
-    }
-
-    /**
-     * @param Challenge $current
-     * @param ChallengeRepository $challengeRepo
-     * @param ChallengeCategoryRepository $categoryRepo
-     * @param ChallengeRun $run
-     * @return Challenge|null
-     */
-    private function findNextChallenge(
-        Challenge $current,
-        ChallengeRepository $challengeRepo,
-        ChallengeCategoryRepository $categoryRepo,
-        ChallengeRun $run): ?Challenge
-    {
-        $mode = $run->getMode();
-
-        switch ($mode->getType()) {
-
-            default:
-            case RunMode::TYPE_ALL:
-
-                $next = $challengeRepo->findNextChallenge($current);
-                if (!$next) {
-                    $nextCategory = $categoryRepo->findNextCategory($current->getCategory());
-                    if ($nextCategory) {
-                        $next = $challengeRepo->findFirstFromCategory($nextCategory);
-                    }
-                }
-                return $next;
-
-            case RunMode::TYPE_RANDOM:
-
-                if ($run->getCount() >= $mode->getLength()) {
-                    return null;
-                }
-                $category = $categoryRepo->findRandomCategory($current->getSection());
-                $candidates = $category->getChallenge()->toArray();
-                $candidateKey = array_rand($candidates);
-                $next = $candidates[$candidateKey];
-                if ($next) {
-                    $run->incrementCount();
-                }
-                // avoid duplicates ?
-                return $next;
-        }
     }
 }

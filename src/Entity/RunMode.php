@@ -11,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class RunMode extends Entity
 {
-    const TYPE_ALL = 0;
-    const TYPE_RANDOM = 1;
+    public const TYPE_ALL = 0;
+    public const TYPE_RANDOM = 1;
 
     use PositionTrait, NameTrait;
 

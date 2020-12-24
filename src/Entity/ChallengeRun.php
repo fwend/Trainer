@@ -27,7 +27,7 @@ class ChallengeRun extends Entity
     /**
      * @ORM\OneToOne(targetEntity=RunMode::class)
      */
-    private ?Challenge $mode;
+    private ?RunMode $mode;
 
     public function getId(): ?int
     {
@@ -65,18 +65,18 @@ class ChallengeRun extends Entity
     }
 
     /**
-     * @return Challenge|null
+     * @return RunMode|null
      */
-    public function getMode(): ?Challenge
+    public function getMode(): ?RunMode
     {
         return $this->mode;
     }
 
     /**
-     * @param Challenge $mode
+     * @param RunMode|null $mode
      * @return ChallengeRun
      */
-    public function setMode(Challenge $mode): ChallengeRun
+    public function setMode(?RunMode $mode): ChallengeRun
     {
         $this->mode = $mode;
         return $this;

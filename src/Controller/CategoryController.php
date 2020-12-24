@@ -50,14 +50,33 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/categories/edit/{category}", name="edit_category")
+     * @Route("/categories/edit/{category}/{section}", name="edit_category")
      *
      * @param Request $request
      * @param ChallengeCategory $category
+     * @param ChallengeSection $section
      * @return Response
      */
-    public function editCategoryAction(Request $request, ChallengeCategory $category): Response
+    public function editCategoryAction(
+        Request $request,
+        ChallengeCategory $category,
+        ChallengeSection $section): Response
     {
-        return new Response('todo');
+        $form = $this->createForm(CategoryType::class, $category);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($category);
+            $em->flush();
+            return $this->redirectToRoute('list_categories', [
+                'section' => $section->getId()
+            ]);
+        }
+        return $this->render('category/category.edit.html.twig', [
+            'form' => $form->createView(),
+            'category' => $category
+        ]);
     }
 }

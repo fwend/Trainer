@@ -28,7 +28,10 @@
                                 <li class="list-group-item list-group-item-action">
                                     <div class="d-flex justify-content-between">
                                         <a href="{{ path('list_challenges', {'category': category.id}) }}">{{ category|lower }}</a>
-                                        <a href="{{ path('edit_category', {'category': category.id}) }}">edit</a>
+                                        <a href="{{ path('edit_category', {
+                                            'category': category.id,
+                                            'section': section.id
+                                        }) }}">edit</a>
                                     </div>
                                 </li>
                             {% endif %}

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/category/category.edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/category.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/category.index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +166,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -245,7 +248,8 @@
       <workItem from="1608717167794" duration="13797000" />
       <workItem from="1608733930541" duration="1277000" />
       <workItem from="1608766232815" duration="1312000" />
-      <workItem from="1608773991794" duration="3395000" />
+      <workItem from="1608773991794" duration="4342000" />
+      <workItem from="1608797848993" duration="1763000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -457,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608777254489</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="include all answers in loop">
+      <created>1608777787321</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1608777787321</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +478,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="gedmo" />
     <MESSAGE value="site.css" />
     <MESSAGE value="enable dropdowns" />
     <MESSAGE value="add category controller" />
@@ -492,7 +502,8 @@
     <MESSAGE value="removed webpack junk" />
     <MESSAGE value="removed encore" />
     <MESSAGE value="test for similarity" />
-    <option name="LAST_COMMIT_MESSAGE" value="test for similarity" />
+    <MESSAGE value="include all answers in loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="include all answers in loop" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

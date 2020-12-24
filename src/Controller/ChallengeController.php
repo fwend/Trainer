@@ -109,10 +109,8 @@ class ChallengeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $next = $this->findNextChallenge($curr, $challengeRepo, $challengeCategoryRepo, $run);
 
-            $run->setCurrent($next); // null allowed
-            if ($next) {
-                $run->incrementCount();
-            }
+            // null is valid here, it means the run is over
+            $run->setCurrent($next);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($run);
@@ -134,24 +132,26 @@ class ChallengeController extends AbstractController
     /**
      * @param Challenge $current
      * @param ChallengeRepository $challengeRepo
-     * @param ChallengeCategoryRepository $challengeCategoryRepo
+     * @param ChallengeCategoryRepository $categoryRepo
      * @param ChallengeRun $run
      * @return Challenge|null
      */
     private function findNextChallenge(
         Challenge $current,
         ChallengeRepository $challengeRepo,
-        ChallengeCategoryRepository $challengeCategoryRepo,
+        ChallengeCategoryRepository $categoryRepo,
         ChallengeRun $run): ?Challenge
     {
         $mode = $run->getMode();
 
         switch ($mode->getType()) {
+
             default:
             case RunMode::TYPE_ALL:
+
                 $next = $challengeRepo->findNextChallenge($current);
                 if (!$next) {
-                    $nextCategory = $challengeCategoryRepo->findNextCategory($current->getCategory());
+                    $nextCategory = $categoryRepo->findNextCategory($current->getCategory());
                     if ($nextCategory) {
                         $next = $challengeRepo->findFirstFromCategory($nextCategory);
                     }
@@ -159,13 +159,19 @@ class ChallengeController extends AbstractController
                 return $next;
 
             case RunMode::TYPE_RANDOM:
-                if ($mode->getLength() >= $run->getCount()) {
+
+                if ($run->getCount() >= $mode->getLength()) {
                     return null;
                 }
-                // find random category (ignore empty)
-                // find random challenge
+                $category = $categoryRepo->findRandomCategory($current->getSection());
+                $candidates = $category->getChallenge()->toArray();
+                $candidateKey = array_rand($candidates);
+                $next = $candidates[$candidateKey];
+                if ($next) {
+                    $run->incrementCount();
+                }
                 // avoid duplicates ?
-                return null;
+                return $next;
         }
     }
 }

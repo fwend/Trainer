@@ -63,4 +63,27 @@ class ChallengeCategoryRepository extends ServiceEntityRepository
         }
         return null;
     }
+
+    /**
+     * @param ChallengeSection $section
+     * @return ChallengeCategory|null
+     */
+    public function findRandomCategory(ChallengeSection $section): ?ChallengeCategory
+    {
+        $qb = $this->createQueryBuilder('c');
+        $qb->andWhere($qb->expr()->eq('c.section', ':section'))
+            ->setParameter(':section', $section);
+
+        $result = $qb->getQuery()->getResult();
+        if ($result && is_array($result) && shuffle($result)) {
+            /** @var ChallengeCategory $item */
+            foreach ($result as $item) {
+                if ($item->getChallenge()->count()) { // skip empty
+                    return $item;
+                }
+            }
+        }
+
+        return null;
+    }
 }

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ChallengeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="6e2ae70c-bb91-4a19-b646-5960610cb750" name="localhost" />
@@ -251,7 +251,7 @@
       <workItem from="1608733930541" duration="1277000" />
       <workItem from="1608766232815" duration="1312000" />
       <workItem from="1608773991794" duration="4342000" />
-      <workItem from="1608797848993" duration="12105000" />
+      <workItem from="1608797848993" duration="14923000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -519,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608807957999</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add mode switch">
+      <created>1608811365445</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1608811365445</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +536,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="make answers string temporarily" />
     <MESSAGE value="challenge form" />
     <MESSAGE value="make menu dynamic" />
     <MESSAGE value="add challenge run" />
@@ -554,9 +560,21 @@
     <MESSAGE value="make run mode selectable" />
     <MESSAGE value="add purge" />
     <MESSAGE value="fix purge" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix purge" />
+    <MESSAGE value="add mode switch" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mode switch" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/ChallengeController.php</url>
+          <line>144</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/trainer@phpunit_xml_dist.xml" NAME="phpunit.xml.dist Coverage Results" MODIFIED="1603140485308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

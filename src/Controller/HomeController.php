@@ -6,6 +6,7 @@ use App\Entity\Challenge;
 use App\Entity\ChallengeRun;
 use App\Entity\RunMode;
 use App\Form\ChallengeRunType;
+use App\Repository\ChallengeCategoryRepository;
 use App\Repository\ChallengeRepository;
 use App\Repository\ChallengeRunRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,12 +25,14 @@ class HomeController extends AbstractController
      * @param Request $request
      * @param ChallengeRunRepository $runRepo
      * @param ChallengeRepository $challengeRepo
+     * @param ChallengeCategoryRepository $categoryRepo
      * @return Response
      */
     public function indexAction(
         Request $request,
         ChallengeRunRepository $runRepo,
-        ChallengeRepository $challengeRepo): Response
+        ChallengeRepository $challengeRepo,
+        ChallengeCategoryRepository $categoryRepo): Response
     {
         $run = $runRepo->findRun();
 
@@ -40,7 +43,7 @@ class HomeController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $runRepo->purge();// TODO user
-                if ($current = $this->findFirst($challengeRepo, $run)) {
+                if ($current = $this->findFirst($challengeRepo, $categoryRepo, $run)) {
                     $run->setCurrent($current);
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($run);
@@ -76,19 +79,37 @@ class HomeController extends AbstractController
 
     /**
      * @param ChallengeRepository $challengeRepo
+     * @param ChallengeCategoryRepository $categoryRepo
      * @param ChallengeRun $run
      * @return Challenge|null
      */
     private function findFirst(
         ChallengeRepository $challengeRepo,
+        ChallengeCategoryRepository $categoryRepo,
         ChallengeRun $run): ?Challenge
     {
-        switch ($run->getMode()->getType()) {
+        $mode = $run->getMode();
+
+        switch ($mode->getType()) {
+
             default:
             case RunMode::TYPE_ALL:
                 return $challengeRepo->findFirstFromSection($run->getSection());
+
             case RunMode::TYPE_RANDOM:
-                return null;
+                // TODO code duplication
+                if ($run->getCount() >= $mode->getLength()) {
+                    return null;
+                }
+                $category = $categoryRepo->findRandomCategory($run->getSection());
+                $candidates = $category->getChallenge()->toArray();
+                $candidateKey = array_rand($candidates);
+                $next = $candidates[$candidateKey];
+                if ($next) {
+                    $run->incrementCount();
+                }
+                // avoid duplicates ?
+                return $next;
         }
     }
 }

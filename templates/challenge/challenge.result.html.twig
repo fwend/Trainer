@@ -15,26 +15,20 @@
                 </div>
             </div>
             <div class="card-body">
-                <p class="card-text"><span class="font-weight-bold">Result for</span>: {{ challenge.content }}</p>
-                <div class="card-text row mt-3">
-                    <div class="font-weight-bold col-2">Possible answers</div>
-                    <div class="col-10">{{ challenge.answers|length ? challenge.answers|first }}</div>
-                </div>
-                {% set answerNormalized = answer|lower|replace({' ' : ''}) %}
-                {% set possibleMatch = false %}
+                <p class="card-text mb-3"><span class="font-weight-bold">Result for</span>: {{ challenge.content }}</p>
 
-                {% if challenge.answers|length > 1 %}
-                    {% for possibleAnswer in challenge.answers[1:] %}
-                        {% set isSimilar = answerNormalized == possibleAnswer|lower|replace({' ' : ''}) %}
-                        <div class="card-text row">
-                            <div class="col-2"></div>
-                            <div class="col-10 {{ isSimilar ? 'text-success' : '' }}">{{ possibleAnswer }}</div>
-                        </div>
-                        {% if possibleMatch == false and isSimilar %}
-                            {% set possibleMatch = isSimilar %}
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
+                {% set answerNormalized = answer|lower|replace({' ' : ''}) %}
+                {% set possibleMatch = 0 %}
+
+                {% for possibleAnswer in challenge.answers %}
+                    {% set isSimilar = answerNormalized == possibleAnswer|lower|replace({' ' : ''}) %}
+                    <div class="card-text row">
+                        <div class="col-2 font-weight-bold">{{ loop.first ? 'Possible answers' : '' }}</div>
+                        <div class="col-10 {{ isSimilar ? 'text-success' : '' }}">{{ possibleAnswer }}</div>
+                    </div>
+                    {% set possibleMatch = possibleMatch + isSimilar %}
+                {% endfor %}
+
                 <div class="card-text row mt-3">
                     <p class="font-weight-bold col-2">Your answer</p>
                     <p class="col-10 {{ possibleMatch ? 'text-success' : '' }}"> {{ answer }}</p>

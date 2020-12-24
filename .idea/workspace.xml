@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.result.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +245,7 @@
       <workItem from="1608717167794" duration="13797000" />
       <workItem from="1608733930541" duration="1277000" />
       <workItem from="1608766232815" duration="1312000" />
-      <workItem from="1608773991794" duration="2883000" />
+      <workItem from="1608773991794" duration="3395000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -451,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608767593915</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="test for similarity">
+      <created>1608777254489</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1608777254489</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +467,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add encore webpack" />
     <MESSAGE value="gedmo" />
     <MESSAGE value="site.css" />
     <MESSAGE value="enable dropdowns" />
@@ -486,7 +491,8 @@
     <MESSAGE value="workspace" />
     <MESSAGE value="removed webpack junk" />
     <MESSAGE value="removed encore" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed encore" />
+    <MESSAGE value="test for similarity" />
+    <option name="LAST_COMMIT_MESSAGE" value="test for similarity" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

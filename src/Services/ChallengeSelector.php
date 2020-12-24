@@ -27,12 +27,9 @@ class ChallengeSelector
      * @param ChallengeRun $run
      * @return Challenge|null
      */
-    public function findFirst(
-        ChallengeRun $run): ?Challenge
+    public function findFirst(ChallengeRun $run): ?Challenge
     {
-        $mode = $run->getMode();
-
-        switch ($mode->getType()) {
+        switch ($run->getMode()->getType()) {
 
             default:
             case RunMode::TYPE_ALL:
@@ -110,9 +107,7 @@ class ChallengeSelector
         $alreadyDone = $run->getRunHistory()->getChallengeIds();
 
         $ids = $this->challengeRepo->findChallengeIds($run->getSection());
-        $ids = array_filter($ids, function ($id) use ($alreadyDone) {
-            return !in_array($id, $alreadyDone);
-        });
+        $ids = array_diff($ids, $alreadyDone);
 
         if (count($ids) && shuffle($ids)) {
             $id = array_shift($ids);

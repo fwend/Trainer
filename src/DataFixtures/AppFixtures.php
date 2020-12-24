@@ -6,7 +6,7 @@ use App\Entity\RunMode;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-// php bin/console do:fi:lo
+// php bin/console do:fi:lo --append
 
 class AppFixtures extends Fixture
 {

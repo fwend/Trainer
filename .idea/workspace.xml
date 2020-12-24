@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201224164341.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201224173104.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/trainer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trainer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ChallengeSelector.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ChallengeSelector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.done.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,13 +162,14 @@
     <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/challenge" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -251,7 +255,9 @@
       <workItem from="1608797848993" duration="20378000" />
       <workItem from="1608827891295" duration="663000" />
       <workItem from="1608828572067" duration="1255000" />
-      <workItem from="1608830822435" duration="3641000" />
+      <workItem from="1608830822435" duration="4680000" />
+      <workItem from="1608840772709" duration="486000" />
+      <workItem from="1608850945275" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -561,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608834181575</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="migrations">
+      <created>1608834488556</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1608834488556</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +584,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="improve presentation a bit" />
     <MESSAGE value="improve presentation some more" />
     <MESSAGE value="some cleanup" />
     <MESSAGE value="fix css, cat argument" />
@@ -596,7 +608,8 @@
     <MESSAGE value="run history" />
     <MESSAGE value="get random" />
     <MESSAGE value="app fixtures" />
-    <option name="LAST_COMMIT_MESSAGE" value="app fixtures" />
+    <MESSAGE value="migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrations" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

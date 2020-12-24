@@ -25,7 +25,7 @@ class ChallengeRun extends Entity
     private ?Challenge $current;
 
     /**
-     * @ORM\OneToOne(targetEntity=RunMode::class)
+     * @ORM\ManyToOne(targetEntity=RunMode::class)
      */
     private ?RunMode $mode;
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeRun;
+use App\Entity\RunMode;
 use App\Form\ChallengeType;
 use App\Form\TakeChallengeType;
 use App\Repository\ChallengeCategoryRepository;
@@ -106,9 +107,13 @@ class ChallengeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $next = $this->findNextChallenge($curr, $challengeRepo, $challengeCategoryRepo);
+            $next = $this->findNextChallenge($curr, $challengeRepo, $challengeCategoryRepo, $run);
 
-            $run->setCurrent($next);
+            $run->setCurrent($next); // null allowed
+            if ($next) {
+                $run->incrementCount();
+            }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($run);
             $em->flush();
@@ -130,20 +135,37 @@ class ChallengeController extends AbstractController
      * @param Challenge $current
      * @param ChallengeRepository $challengeRepo
      * @param ChallengeCategoryRepository $challengeCategoryRepo
-     * @return Challenge|int|mixed|string|null
+     * @param ChallengeRun $run
+     * @return Challenge|null
      */
     private function findNextChallenge(
         Challenge $current,
         ChallengeRepository $challengeRepo,
-        ChallengeCategoryRepository $challengeCategoryRepo)
+        ChallengeCategoryRepository $challengeCategoryRepo,
+        ChallengeRun $run): ?Challenge
     {
-        $next = $challengeRepo->findNextChallenge($current);
-        if (!$next) {
-            $nextCategory = $challengeCategoryRepo->findNextCategory($current->getCategory());
-            if ($nextCategory) {
-                $next = $challengeRepo->findFirstFromCategory($nextCategory);
-            }
+        $mode = $run->getMode();
+
+        switch ($mode->getType()) {
+            default:
+            case RunMode::TYPE_ALL:
+                $next = $challengeRepo->findNextChallenge($current);
+                if (!$next) {
+                    $nextCategory = $challengeCategoryRepo->findNextCategory($current->getCategory());
+                    if ($nextCategory) {
+                        $next = $challengeRepo->findFirstFromCategory($nextCategory);
+                    }
+                }
+                return $next;
+
+            case RunMode::TYPE_RANDOM:
+                if ($mode->getLength() >= $run->getCount()) {
+                    return null;
+                }
+                // find random category (ignore empty)
+                // find random challenge
+                // avoid duplicates ?
+                return null;
         }
-        return $next;
     }
 }

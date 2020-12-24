@@ -36,26 +36,29 @@ class ChallengeRepository extends ServiceEntityRepository
                 ->setParameter(':category', $category)
                 ->getQuery()
                 ->getSingleScalarResult();
-        } catch (NoResultException|NonUniqueResultException $e) {
+        } catch (NoResultException | NonUniqueResultException $e) {
         }
         return -1;
     }
 
     /**
      * @param ChallengeSection $section
-     * @return int|mixed|string|null
+     * @return Challenge|null
      */
     public function findFirstFromSection(ChallengeSection $section): ?Challenge
     {
         try {
-            return $this->createQueryBuilder('c')
+            $qb = $this->createQueryBuilder('c')
                 ->join('c.category', 'cat', 'WITH', 'cat.section = :section')
                 ->setParameter(':section', $section)
                 ->orderBy('cat.position', 'ASC')
                 ->addOrderBy('c.position', 'ASC')
-                ->setMaxResults(1)
-                ->getQuery()
-                ->getSingleResult();
+                ->setMaxResults(1);
+
+            $result = $qb->getQuery()->getSingleResult();
+            if ($result instanceof Challenge) {
+                return $result;
+            }
 
         } catch (NoResultException | NonUniqueResultException $e) {
         }
@@ -64,40 +67,48 @@ class ChallengeRepository extends ServiceEntityRepository
 
     /**
      * @param ChallengeCategory $category
-     * @return int|mixed|string|null
+     * @return Challenge|null
      */
     public function findFirstFromCategory(ChallengeCategory $category): ?Challenge
     {
         try {
-            return $this->createQueryBuilder('c')
+            $qb = $this->createQueryBuilder('c')
                 ->join('c.category', 'cat', 'WITH', 'cat.id = :category')
                 ->setParameter(':category', $category)
                 ->addOrderBy('c.position', 'ASC')
-                ->setMaxResults(1)
-                ->getQuery()
-                ->getSingleResult();
+                ->setMaxResults(1);
+
+            $result = $qb->getQuery()->getSingleResult();
+            if ($result instanceof Challenge) {
+                return $result;
+            }
 
         } catch (NoResultException | NonUniqueResultException $e) {
         }
         return null;
     }
 
-    public function findNextChallenge(Challenge $challenge)
+    /**
+     * @param Challenge $challenge
+     * @return Challenge|null
+     */
+    public function findNextChallenge(Challenge $challenge): ?Challenge
     {
         try {
             $qb = $this->createQueryBuilder('c');
-            return $qb->join('c.category', 'cat', 'WITH', 'cat.id = :category')
+            $qb->join('c.category', 'cat', 'WITH', 'cat.id = :category')
                 ->andWhere($qb->expr()->eq('c.position', ':position'))
                 ->setParameter(':category', $challenge->getCategory())
                 ->setParameter(':position', $challenge->getPosition() + 1)
-                ->setMaxResults(1)
-                ->getQuery()
-                ->getSingleResult();
+                ->setMaxResults(1);
+
+            $result = $qb->getQuery()->getSingleResult();
+            if ($result instanceof Challenge) {
+                return $result;
+            }
 
         } catch (NoResultException | NonUniqueResultException $e) {
         }
         return null;
     }
-
-
 }

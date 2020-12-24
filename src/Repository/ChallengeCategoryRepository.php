@@ -35,23 +35,29 @@ class ChallengeCategoryRepository extends ServiceEntityRepository
                 ->setParameter(':section', $section)
                 ->getQuery()
                 ->getSingleScalarResult();
-        } catch (NoResultException|NonUniqueResultException $e) {
+        } catch (NoResultException | NonUniqueResultException $e) {
         }
         return 0;
     }
 
-    public function findNextCategory(ChallengeCategory $category)
+    /**
+     * @param ChallengeCategory $category
+     * @return ChallengeCategory|null
+     */
+    public function findNextCategory(ChallengeCategory $category): ?ChallengeCategory
     {
         try {
             $qb = $this->createQueryBuilder('c');
-            return $qb
-                ->andWhere($qb->expr()->eq('c.position', ':position'))
+            $qb->andWhere($qb->expr()->eq('c.position', ':position'))
                 ->andWhere($qb->expr()->eq('c.section', ':section'))
                 ->setParameter(':position', $category->getPosition() + 1)
                 ->setParameter(':section', $category->getSection())
-                ->setMaxResults(1)
-                ->getQuery()
-                ->getSingleResult();
+                ->setMaxResults(1);
+
+            $result = $qb->getQuery()->getSingleResult();
+            if ($result instanceof ChallengeCategory) {
+                return $result;
+            }
 
         } catch (NoResultException | NonUniqueResultException $e) {
         }

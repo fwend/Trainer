@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Challenge;
 use App\Entity\ChallengeRun;
+use App\Entity\RunMode;
 use App\Form\ChallengeRunType;
 use App\Repository\ChallengeRepository;
 use App\Repository\ChallengeRunRepository;
@@ -16,7 +18,6 @@ class HomeController extends AbstractController
 {
     // TODO user login
     // TODO easy admin
-    // TODO softdelete
 
     /**
      * @Route("/", name="index")
@@ -38,15 +39,16 @@ class HomeController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $runRepo->purge();// user
-                $current = $challengeRepo->findFirstFromSection($run->getSection());
-                $run->setCurrent($current);
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($run);
-                $em->flush();
-                return $this->redirectToRoute('take_challenge', [
-                    'run' => $run->getId()
-                ]);
+                $runRepo->purge();// TODO user
+                if ($current = $this->findFirst($challengeRepo, $run)) {
+                    $run->setCurrent($current);
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($run);
+                    $em->flush();
+                    return $this->redirectToRoute('take_challenge', [
+                        'run' => $run->getId()
+                    ]);
+                }
             }
 
             return $this->render('home/home.start.html.twig', [
@@ -70,5 +72,23 @@ class HomeController extends AbstractController
         $em->persist($run);
         $em->flush();
         return $this->redirectToRoute('index');
+    }
+
+    /**
+     * @param ChallengeRepository $challengeRepo
+     * @param ChallengeRun $run
+     * @return Challenge|null
+     */
+    private function findFirst(
+        ChallengeRepository $challengeRepo,
+        ChallengeRun $run): ?Challenge
+    {
+        switch ($run->getMode()->getType()) {
+            default:
+            case RunMode::TYPE_ALL:
+                return $challengeRepo->findFirstFromSection($run->getSection());
+            case RunMode::TYPE_RANDOM:
+                return null;
+        }
     }
 }

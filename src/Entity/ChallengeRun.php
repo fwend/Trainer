@@ -104,4 +104,9 @@ class ChallengeRun extends Entity
         $this->count = $count;
         return $this;
     }
+
+    public function incrementCount()
+    {
+        $this->count++;
+    }
 }

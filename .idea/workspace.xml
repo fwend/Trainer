@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RunMode.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RunMode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ChallengeRunType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChallengeRunType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.start.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.start.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +250,7 @@
       <workItem from="1608733930541" duration="1277000" />
       <workItem from="1608766232815" duration="1312000" />
       <workItem from="1608773991794" duration="4342000" />
-      <workItem from="1608797848993" duration="7554000" />
+      <workItem from="1608797848993" duration="8485000" />
     </task>
     <task id="LOCAL-00001" summary="setting up project, first entities">
       <created>1602099222605</created>
@@ -498,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608804029362</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="make run mode selectable">
+      <created>1608806858392</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1608806858392</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +514,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="challenge controller" />
     <MESSAGE value="horizontal form" />
     <MESSAGE value="add challenge" />
     <MESSAGE value="make answers string temporarily" />
@@ -533,7 +538,8 @@
     <MESSAGE value="todos" />
     <MESSAGE value="installed datafixtures" />
     <MESSAGE value="added runmode fixtures, add runmode to run" />
-    <option name="LAST_COMMIT_MESSAGE" value="added runmode fixtures, add runmode to run" />
+    <MESSAGE value="make run mode selectable" />
+    <option name="LAST_COMMIT_MESSAGE" value="make run mode selectable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

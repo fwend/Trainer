@@ -29,6 +29,11 @@ class ChallengeRun extends Entity
      */
     private ?RunMode $mode;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private ?int $count = 0;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -79,6 +84,24 @@ class ChallengeRun extends Entity
     public function setMode(?RunMode $mode): ChallengeRun
     {
         $this->mode = $mode;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getCount(): ?int
+    {
+        return $this->count;
+    }
+
+    /**
+     * @param int $count
+     * @return ChallengeRun
+     */
+    public function setCount(int $count): ChallengeRun
+    {
+        $this->count = $count;
         return $this;
     }
 }

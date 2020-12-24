@@ -38,6 +38,7 @@ class HomeController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
+                $runRepo->purge();// user
                 $current = $challengeRepo->findFirstFromSection($run->getSection());
                 $run->setCurrent($current);
                 $em = $this->getDoctrine()->getManager();

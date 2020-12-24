@@ -39,9 +39,9 @@ class ChallengeSelector
                 return $this->challengeRepo->findFirstFromSection($run->getSection());
 
             case RunMode::TYPE_RANDOM:
-                $first = $this->findRandom($run);
+                $first = $this->findFirstRandom($run);
                 $runHistory = new RunHistory();
-                $runHistory->addChallenge($first);
+                $runHistory->addChallengeId($first->getId());
                 $run->setRunHistory($runHistory);
                 return $first;
         }
@@ -71,7 +71,7 @@ class ChallengeSelector
                 return $next;
 
             case RunMode::TYPE_RANDOM:
-                return $this->findRandom($run);
+                return $this->findNextRandom($run);
         }
     }
 
@@ -79,26 +79,49 @@ class ChallengeSelector
      * @param ChallengeRun $run
      * @return Challenge|null
      */
-    public function findRandom(ChallengeRun $run): ?Challenge
+    public function findFirstRandom(ChallengeRun $run): ?Challenge
     {
         if ($run->getCount() >= $run->getMode()->getLength()) {
             return null;
         }
-        $category = $this->categoryRepo->findRandomCategory($run->getSection(), $run->getRunHistory());
-        $candidates = $category->getChallenge()->toArray();
-        $candidateKey = array_rand($candidates);
-        $next = $candidates[$candidateKey];
-        if ($next) {
-            $run->incrementCount();
-            $run->getRunHistory()->addChallenge($next);
+
+        $ids = $this->challengeRepo->findChallengeIds($run->getSection());
+
+        if (count($ids) && shuffle($ids)) {
+            $id = array_shift($ids);
+            if ($next = $this->challengeRepo->find($id)) {
+                $run->incrementCount();
+            }
+            return $next;
         }
-        // avoid duplicates ?
-        // count challenges in section
-        // get min(count, num)
-        // get all ids
-        // filters ids in history
-        // shuffle
-        // array shift
-        return $next;
+        return null;
+    }
+
+    /**
+     * @param ChallengeRun $run
+     * @return Challenge|null
+     */
+    public function findNextRandom(ChallengeRun $run): ?Challenge
+    {
+        if ($run->getCount() >= $run->getMode()->getLength()) {
+            return null;
+        }
+
+        $alreadyDone = $run->getRunHistory()->getChallengeIds();
+
+        $ids = $this->challengeRepo->findChallengeIds($run->getSection());
+        $ids = array_filter($ids, function ($id) use ($alreadyDone) {
+            return !in_array($id, $alreadyDone);
+        });
+
+        if (count($ids) && shuffle($ids)) {
+            $id = array_shift($ids);
+            if ($next = $this->challengeRepo->find($id)) {
+                $run->incrementCount();
+                $run->getRunHistory()->addChallengeId($next->getId());
+            }
+            return $next;
+        }
+        return null;
     }
 }

@@ -26,11 +26,6 @@ class ChallengeSection extends Entity
         $this->categories = new ArrayCollection();
     }
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     /**
      * @return Collection|ChallengeCategory[]
      */

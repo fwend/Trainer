@@ -27,28 +27,23 @@ class Challenge extends Entity
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $link;
+    private ?string $link = null;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private ?int $score;
+    private ?int $score = 0;
 
     /**
      * @ORM\Column(type="text", length=255, nullable=true)
      */
-    private ?string $note;
+    private ?string $note = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=ChallengeCategory::class, inversedBy="challenge")
      * @ORM\JoinColumn(nullable=false)
      */
     private ChallengeCategory $category;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getContent(): ?string
     {

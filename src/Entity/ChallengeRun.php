@@ -21,12 +21,12 @@ class ChallengeRun extends Entity
      * @ORM\OneToOne(targetEntity=Challenge::class, cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
-    private ?Challenge $current;
+    private ?Challenge $current = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=RunMode::class)
      */
-    private ?RunMode $mode;
+    private ?RunMode $mode = null;
 
     /**
      * @ORM\Column(type="integer")
@@ -36,12 +36,7 @@ class ChallengeRun extends Entity
     /**
      * @ORM\OneToOne(targetEntity=RunHistory::class, mappedBy="run", cascade={"persist", "remove"})
      */
-    private ?RunHistory $runHistory;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    private ?RunHistory $runHistory = null;
 
     /**
      * @return ChallengeSection

@@ -111,4 +111,29 @@ class ChallengeRepository extends ServiceEntityRepository
         }
         return null;
     }
+
+    /**
+     * @param ChallengeSection $section
+     * @return array
+     */
+    public function findChallengeIds(ChallengeSection $section): array
+    {
+        $qb = $this->createQueryBuilder('c');
+        $qb->select('c.id');
+        $qb->join('c.category', 'cat');
+        $ex = $qb->expr();
+
+        $results = $qb
+            ->andWhere($ex->eq('cat.section', ':section'))
+            ->setParameter(':section', $section)
+            ->getQuery()
+            ->getResult();
+
+        $ids = [];
+        foreach ($results ?? [] as $result) {
+            $ids[] = $result['id'];
+        }
+
+        return $ids;
+    }
 }

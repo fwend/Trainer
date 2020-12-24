@@ -31,6 +31,11 @@ abstract class Entity
      */
     protected DateTime $modified;
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
     public function __toString(): string
     {
         $className = get_class($this);

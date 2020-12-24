@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\RunHistoryRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,51 +11,15 @@ use Doctrine\ORM\Mapping as ORM;
 class RunHistory extends Entity
 {
     /**
-     * @ORM\ManyToMany(targetEntity=Challenge::class)
+     * @ORM\Column(type="array")
      */
-    private Collection $challenges;
+    private array $challengeIds = [];
 
     /**
      * @ORM\OneToOne(targetEntity=ChallengeRun::class, inversedBy="runHistory")
      * @ORM\JoinColumn(nullable=false)
      */
-    private ?ChallengeRun $run;
-
-    public function __construct()
-    {
-        $this->challenges = new ArrayCollection();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return Collection|Challenge[]
-     */
-    public function getChallenges(): Collection
-    {
-        return $this->challenges;
-    }
-
-    public function addChallenge(Challenge $challenge): self
-    {
-        if (!$this->challenges->contains($challenge)) {
-            $this->challenges[] = $challenge;
-        }
-
-        return $this;
-    }
-
-    public function removeChallenge(Challenge $challenge): self
-    {
-        if ($this->challenges->contains($challenge)) {
-            $this->challenges->removeElement($challenge);
-        }
-
-        return $this;
-    }
+    private ?ChallengeRun $run = null;
 
     public function getRun(): ?ChallengeRun
     {
@@ -69,5 +31,28 @@ class RunHistory extends Entity
         $this->run = $run;
 
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getChallengeIds(): array
+    {
+        return $this->challengeIds;
+    }
+
+    /**
+     * @param array $challengeIds
+     * @return RunHistory
+     */
+    public function setChallengeIds(array $challengeIds): RunHistory
+    {
+        $this->challengeIds = $challengeIds;
+        return $this;
+    }
+
+    public function addChallengeId(int $id)
+    {
+        $this->challengeIds[] = $id;
     }
 }

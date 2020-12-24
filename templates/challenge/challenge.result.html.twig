@@ -16,21 +16,28 @@
             </div>
             <div class="card-body">
                 <p class="card-text"><span class="font-weight-bold">Result for</span>: {{ challenge.content }}</p>
-                <div class="card-text row mt-5">
+                <div class="card-text row mt-3">
                     <div class="font-weight-bold col-2">Possible answers</div>
                     <div class="col-10">{{ challenge.answers|length ? challenge.answers|first }}</div>
                 </div>
+                {% set answerNormalized = answer|lower|replace({' ' : ''}) %}
+                {% set possibleMatch = false %}
+
                 {% if challenge.answers|length > 1 %}
-                    {% for answer in challenge.answers %}
+                    {% for possibleAnswer in challenge.answers[1:] %}
+                        {% set isSimilar = answerNormalized == possibleAnswer|lower|replace({' ' : ''}) %}
                         <div class="card-text row">
                             <div class="col-2"></div>
-                            <div class="col-10">{{ answer }}</div>
+                            <div class="col-10 {{ isSimilar ? 'text-success' : '' }}">{{ possibleAnswer }}</div>
                         </div>
+                        {% if possibleMatch == false and isSimilar %}
+                            {% set possibleMatch = isSimilar %}
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
                 <div class="card-text row mt-3">
                     <p class="font-weight-bold col-2">Your answer</p>
-                    <p class="col-10"> {{ answer }}</p>
+                    <p class="col-10 {{ possibleMatch ? 'text-success' : '' }}"> {{ answer }}</p>
                 </div>
             </div>
         </div>

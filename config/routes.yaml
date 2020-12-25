@@ -1,3 +1,8 @@
 index:
     path: /
     controller: App\Controller\HomeController::indexAction
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::loginAction
+    methods: GET|POST

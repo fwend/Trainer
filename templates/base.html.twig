@@ -14,15 +14,18 @@
 <div class="container bg-white px-0 pb-5" style="min-height: 100vh;">
 
     {% block body %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('index') }}">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('list_sections') }}">Admin</a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="d-flex justify-content-between w-100">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('list_sections') }}">Admin</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center mr-2 text-white">{{ app.user ?? 'anon' }}</div>
+            </div>
         </nav>
     {% endblock %}
 </div>

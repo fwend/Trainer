@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Form/LoginType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.continue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.continue.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.start.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.start.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +164,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/challenge" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -177,11 +173,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\src\Form" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\challenge" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\home" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\bootstrap" />
       <recent name="C:\Dev\xampp\htdocs\trainer\public\css" />
-      <recent name="C:\Dev\xampp\htdocs\trainer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Dev\xampp\htdocs\trainer\src\Controller\Admin" />
@@ -270,14 +266,7 @@
       <workItem from="1608908593465" duration="6462000" />
       <workItem from="1608916406957" duration="107000" />
       <workItem from="1608973091238" duration="2423000" />
-      <workItem from="1608977538080" duration="11483000" />
-    </task>
-    <task id="LOCAL-00005" summary="add encore webpack">
-      <created>1602372669759</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1602372669759</updated>
+      <workItem from="1608977538080" duration="12541000" />
     </task>
     <task id="LOCAL-00006" summary="gedmo">
       <created>1602403172487</created>
@@ -615,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608990587510</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fix nav, add logout link">
+      <created>1608993678248</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1608993678248</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +632,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed webpack junk" />
     <MESSAGE value="removed encore" />
     <MESSAGE value="test for similarity" />
     <MESSAGE value="include all answers in loop" />
@@ -661,7 +656,8 @@
     <MESSAGE value="add user to run" />
     <MESSAGE value="shut up editor" />
     <MESSAGE value="logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="logout" />
+    <MESSAGE value="fix nav, add logout link" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix nav, add logout link" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

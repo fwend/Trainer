@@ -101,6 +101,7 @@ class User extends Entity implements UserInterface
     public function getSalt(): ?string
     {
         // not needed when using the "bcrypt" algorithm in security.yaml
+        return null;
     }
 
     /**

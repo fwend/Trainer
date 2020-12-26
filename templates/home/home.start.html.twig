@@ -4,26 +4,7 @@
 
 
 {% block body %}
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="d-flex justify-content-between w-100">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('index') }}">Home</a>
-                </li>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('list_sections') }}">Admin</a>
-                    </li>
-                {% endif %}
-                {% if app.user %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('logout') }}">Logout</a>
-                    </li>
-                {% endif %}
-            </ul>
-            <div class="d-flex align-items-center mr-2 text-white">{{ app.user ?? '' }}</div>
-        </div>
-    </nav>
+    {{ parent() }}
     {{ form_start(form) }}
     <div class="mt-5 mx-5 jumbotron">
         <h1 class="display-4">Start training run</h1>

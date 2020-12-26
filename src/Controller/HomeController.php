@@ -100,7 +100,7 @@ class HomeController extends BaseController
 
         return $this->render('challenge/challenge.html.twig', [
             'challenge' => $curr,
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 

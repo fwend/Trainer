@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/admin/section")
  * @IsGranted("ROLE_ADMIN")
  */
-class SectionController extends BaseController
+class AdminController extends BaseController
 {
     /**
      * @Route("/list", name="list_sections")

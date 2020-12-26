@@ -9,6 +9,8 @@ class BaseController extends AbstractController
 {
     protected function getUser(): User
     {
-        return $this->getUser();
+        /** @var User $user */
+        $user = parent::getUser();
+        return $user;
     }
 }

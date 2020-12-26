@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
+    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="add user to run">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201226123853.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ChallengeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,14 +265,7 @@
       <workItem from="1608908593465" duration="6462000" />
       <workItem from="1608916406957" duration="107000" />
       <workItem from="1608973091238" duration="2423000" />
-      <workItem from="1608977538080" duration="6870000" />
-    </task>
-    <task id="LOCAL-00002" summary="add bootswatch flatly">
-      <created>1602103980386</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1602103980386</updated>
+      <workItem from="1608977538080" duration="7760000" />
     </task>
     <task id="LOCAL-00003" summary="move scss offline">
       <created>1602104093592</created>
@@ -617,11 +603,29 @@
       <option name="project" value="LOCAL" />
       <updated>1608982924995</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="configure security yml, create admin area">
+      <created>1608986065899</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1608986065899</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -651,8 +655,8 @@
     <MESSAGE value="repo" />
     <MESSAGE value="migration, update fixtures with admin user" />
     <MESSAGE value="create login page" />
-    <MESSAGE value="configure security yml, create admin area" />
-    <option name="LAST_COMMIT_MESSAGE" value="configure security yml, create admin area" />
+    <MESSAGE value="add user to run" />
+    <option name="LAST_COMMIT_MESSAGE" value="add user to run" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

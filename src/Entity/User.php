@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -26,6 +28,16 @@ class User extends Entity implements UserInterface
      * @ORM\Column(type="string")
      */
     private string $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ChallengeRun::class, mappedBy="user", orphanRemoval=true)
+     */
+    private Collection $runs;
+
+    public function __construct()
+    {
+        $this->runs = new ArrayCollection();
+    }
 
     public function getEmail(): ?string
     {
@@ -103,5 +115,36 @@ class User extends Entity implements UserInterface
     public function __toString(): string
     {
         return $this->getUsername();
+    }
+
+    /**
+     * @return Collection|ChallengeRun[]
+     */
+    public function getRuns(): Collection
+    {
+        return $this->runs;
+    }
+
+    public function addRun(ChallengeRun $run): self
+    {
+        if (!$this->runs->contains($run)) {
+            $this->runs[] = $run;
+            $run->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRun(ChallengeRun $run): self
+    {
+        if ($this->runs->contains($run)) {
+            $this->runs->removeElement($run);
+            // set the owning side to null (unless already changed)
+            if ($run->getUser() === $this) {
+                $run->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

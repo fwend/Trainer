@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\ChallengeRun;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\ORMException;
@@ -38,13 +39,12 @@ class ChallengeRunRepository extends ServiceEntityRepository
         return null;
     }
 
-    // TODO user
-    public function purge(bool $flush = false)
+    public function purge(User $user, bool $flush = false)
     {
         try {
             $em = $this->getEntityManager();
-            foreach ($this->findAll() as $item) {
-                $em->remove($item);
+            foreach ($user->getRuns() as $run) {
+                $em->remove($run);
             }
             if ($flush) {
                 $em->flush();

@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ChallengeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ChallengeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ChallengeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SectionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.continue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.continue.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.start.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.start.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChallengeRun.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChallengeRunRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,14 +272,7 @@
       <workItem from="1608908593465" duration="6462000" />
       <workItem from="1608916406957" duration="107000" />
       <workItem from="1608973091238" duration="2423000" />
-      <workItem from="1608977538080" duration="4376000" />
-    </task>
-    <task id="LOCAL-00001" summary="setting up project, first entities">
-      <created>1602099222605</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1602099222605</updated>
+      <workItem from="1608977538080" duration="6870000" />
     </task>
     <task id="LOCAL-00002" summary="add bootswatch flatly">
       <created>1602103980386</created>
@@ -616,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608914743330</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="configure security yml, create admin area">
+      <created>1608982924995</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1608982924995</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +627,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add collectiontype" />
     <MESSAGE value="add collectiontype template" />
     <MESSAGE value="workspace" />
     <MESSAGE value="removed webpack junk" />
@@ -651,7 +651,8 @@
     <MESSAGE value="repo" />
     <MESSAGE value="migration, update fixtures with admin user" />
     <MESSAGE value="create login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="create login page" />
+    <MESSAGE value="configure security yml, create admin area" />
+    <option name="LAST_COMMIT_MESSAGE" value="configure security yml, create admin area" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

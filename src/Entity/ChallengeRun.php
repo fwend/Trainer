@@ -10,8 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ChallengeRun extends Entity
 {
-    // TODO user
-
     /**
      * @ORM\ManyToOne(targetEntity=ChallengeSection::class)
      */
@@ -37,6 +35,12 @@ class ChallengeRun extends Entity
      * @ORM\OneToOne(targetEntity=RunHistory::class, mappedBy="run", cascade={"persist", "remove"})
      */
     private ?RunHistory $runHistory = null;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="runs")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private User $user;
 
     /**
      * @return ChallengeSection
@@ -122,6 +126,18 @@ class ChallengeRun extends Entity
         if ($runHistory->getRun() !== $this) {
             $runHistory->setRun($this);
         }
+
+        return $this;
+    }
+
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

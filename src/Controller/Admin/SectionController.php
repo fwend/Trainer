@@ -2,11 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Controller\BaseController;
 use App\Entity\ChallengeSection;
 use App\Form\SectionType;
 use App\Repository\ChallengeSectionRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/admin/section")
  * @IsGranted("ROLE_ADMIN")
  */
-class SectionController extends AbstractController
+class SectionController extends BaseController
 {
     /**
      * @Route("/list", name="list_sections")

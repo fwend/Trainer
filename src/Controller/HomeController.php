@@ -7,13 +7,12 @@ use App\Form\ChallengeRunType;
 use App\Form\TakeChallengeType;
 use App\Repository\ChallengeRunRepository;
 use App\Services\ChallengeSelector;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class HomeController extends BaseController
 {
     // TODO easy admin
 
@@ -32,12 +31,15 @@ class HomeController extends AbstractController
         $run = $runRepo->findRun();
 
         if (!$run) {
-            $form = $this->createForm(ChallengeRunType::class, $run = new ChallengeRun());
+            $run = new ChallengeRun();
+            $run->setUser($this->getUser());
 
+            $form = $this->createForm(ChallengeRunType::class, $run);
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $runRepo->purge();// TODO user
+                $runRepo->purge($run->getUser());
+
                 if ($current = $selector->findFirst($run)) {
                     $run->setCurrent($current);
                     $em = $this->getDoctrine()->getManager();

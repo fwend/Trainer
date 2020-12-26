@@ -1,20 +1,25 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
 use App\Form\CategoryType;
 use App\Repository\ChallengeCategoryRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/admin/categories")
+ * @IsGranted("ROLE_ADMIN")
+ */
 class CategoryController extends AbstractController
 {
     /**
-     * @Route("/categories/{section}", name="list_categories")
+     * @Route("/list/{section}", name="list_categories")
      * @param Request $request
      * @param ChallengeSection $section
      * @param ChallengeCategoryRepository $repo
@@ -50,7 +55,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/categories/edit/{category}/{section}", name="edit_category")
+     * @Route("/edit/{category}/{section}", name="edit_category")
      *
      * @param Request $request
      * @param ChallengeCategory $category

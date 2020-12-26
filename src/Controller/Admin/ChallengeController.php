@@ -1,23 +1,25 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
-use App\Entity\ChallengeRun;
 use App\Form\ChallengeType;
-use App\Form\TakeChallengeType;
 use App\Repository\ChallengeRepository;
-use App\Services\ChallengeSelector;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/admin/challenge")
+ * @IsGranted("ROLE_ADMIN")
+ */
 class ChallengeController extends AbstractController
 {
     /**
-     * @Route("/list-challenges/{category}", name="list_challenges")
+     * @Route("/list/{category}", name="list_challenges")
      * @param ChallengeCategory $category
      * @param ChallengeRepository $repo
      * @return Response
@@ -35,7 +37,7 @@ class ChallengeController extends AbstractController
     }
 
     /**
-     * @Route("/create-challenge/{category}", name="create_challenge")
+     * @Route("/create/{category}", name="create_challenge")
      * @param Request $request
      * @param ChallengeCategory $category
      * @param ChallengeRepository $repo
@@ -52,7 +54,7 @@ class ChallengeController extends AbstractController
     }
 
     /**
-     * @Route("/edit-challenge/{challenge}", name="edit_challenge")
+     * @Route("/edit/{challenge}", name="edit_challenge")
      * @param Request $request
      * @param Challenge $challenge
      * @param bool $adding
@@ -79,50 +81,6 @@ class ChallengeController extends AbstractController
             'form' => $form->createView(),
             'challenge' => $challenge,
             'adding' => $adding
-        ]);
-    }
-
-    /**
-     * @Route("/take-challenge/{run}", name="take_challenge")
-     * @param Request $request
-     * @param ChallengeRun $run
-     * @param ChallengeSelector $selector
-     * @return Response
-     */
-    public function takeChallengeAction(
-        Request $request,
-        ChallengeRun $run,
-        ChallengeSelector $selector): Response
-    {
-        $curr = $run->getCurrent();
-        if (!$curr) {
-            return $this->render('challenge/challenge.done.html.twig');
-        }
-
-        $form = $this->createForm(TakeChallengeType::class, null);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $next = $selector->findNext($curr, $run);
-
-            // null is valid here, it means the run is over
-            $run->setCurrent($next);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($run);
-            $em->flush();
-
-            return $this->render('challenge/challenge.result.html.twig', [
-                'challenge' => $curr,
-                'answer' => $form->get('answer')->getData(),
-                'run' => $run
-            ]);
-        }
-
-        return $this->render('challenge/challenge.html.twig', [
-            'challenge' => $curr,
-            'form' => $form->createView()
         ]);
     }
 }

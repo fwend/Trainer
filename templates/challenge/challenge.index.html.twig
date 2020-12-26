@@ -24,7 +24,7 @@
                                 {% if challenge %}
                                     <li class="list-group-item list-group-item-action">
                                         <div class="d-flex justify-content-between">
-                                            <a href="#">{{ challenge }}</a>
+                                            {{ challenge }}
                                             {# <a href="{{ path('take_challenge', {'challenge': challenge.id}) }}">{{ challenge }}</a> #}
                                             <a href="{{ path('edit_challenge', {'challenge': challenge.id}) }}">edit</a>
                                         </div>

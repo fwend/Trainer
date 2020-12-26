@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="delete loginType">
-      <change beforePath="$PROJECT_DIR$/src/Form/LoginType.php" beforeDir="false" />
+    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,13 +266,9 @@
       <workItem from="1608916406957" duration="107000" />
       <workItem from="1608973091238" duration="2423000" />
       <workItem from="1608977538080" duration="12716000" />
-    </task>
-    <task id="LOCAL-00007" summary="site.css">
-      <created>1602406180651</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1602406180651</updated>
+      <workItem from="1608994925835" duration="47000" />
+      <workItem from="1609001572983" duration="247000" />
+      <workItem from="1609026280831" duration="353000" />
     </task>
     <task id="LOCAL-00008" summary="enable dropdowns">
       <created>1602418048625</created>
@@ -608,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608994795153</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="delete loginType">
+      <created>1608994959425</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1608994959425</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,6 +629,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />

@@ -2,13 +2,17 @@
 
 namespace App\DataFixtures;
 
+use App\DataFixtures\data\LinuxCommandLine;
+use App\Entity\Challenge;
+use App\Entity\ChallengeCategory;
+use App\Entity\ChallengeSection;
 use App\Entity\RunMode;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-// php bin/console do:fi:lo --append
+// php bin/console do:fi:lo -n
 
 class AppFixtures extends Fixture
 {
@@ -26,6 +30,7 @@ class AppFixtures extends Fixture
     {
         $this->loadUsers($manager);
         $this->loadRunModes($manager);
+        $this->loadLinuxCommandLineSection($manager);
         $manager->flush();
     }
 
@@ -70,5 +75,45 @@ class AppFixtures extends Fixture
         $user->setRoles(['ROLE_ADMIN']);
         $user->setEmail('jos@iboss.nl');
         $manager->persist($user);
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadLinuxCommandLineSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(1);
+        $section->setName(LinuxCommandLine::$name);
+        $manager->persist($section);
+
+        $countCategories = 0;
+        foreach (LinuxCommandLine::$data as $categoryName => $categoryData) {
+            $category = new ChallengeCategory();
+            $category->setPosition(++$countCategories);
+            $category->setName($categoryName);
+            $category->setSection($section);
+            $section->addCategory($category);
+            $manager->persist($category);
+
+            foreach ($categoryData as $idx => $challengeData) {
+                $challenge = new Challenge();
+                $challenge->setPosition($idx);
+                $challenge->setName($challengeData['name']);
+                $challenge->setContent($challengeData['content']);
+                $challenge->setAnswers($challengeData['answers']);
+                $challenge->setCategory($category);
+                $category->addChallenge($challenge);
+                if (isset($challengeData['note'])) {
+                    $challenge->setNote($challengeData['note']);
+                }
+                if (isset($challengeData['link'])) {
+                    $challenge->setLink($challengeData['link']);
+                }
+                $manager->persist($challenge);
+            }
+        }
+
+        $manager->flush();
     }
 }

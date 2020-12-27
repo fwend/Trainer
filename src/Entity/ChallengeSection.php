@@ -57,15 +57,4 @@ class ChallengeSection extends Entity
         return $this;
     }
 
-    public function getChallengeRun(): ?ChallengeRun
-    {
-        return $this->challengeRun;
-    }
-
-    public function setChallengeRun(?ChallengeRun $challengeRun): self
-    {
-        $this->challengeRun = $challengeRun;
-
-        return $this;
-    }
 }

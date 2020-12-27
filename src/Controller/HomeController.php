@@ -14,8 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends BaseController
 {
-    // TODO easy admin
-
     /**
      * @Route("/", name="index")
      * @param Request $request
@@ -32,14 +30,13 @@ class HomeController extends BaseController
         $run = $runRepo->findRun($user);
 
         if (!$run) {
-            $run = new ChallengeRun();
-            $run->setUser($user);
+            $run = (new ChallengeRun)->setUser($user);
 
             $form = $this->createForm(ChallengeRunType::class, $run);
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $runRepo->purge($run->getUser());
+                $runRepo->purge($user);
 
                 if ($current = $selector->findFirst($run)) {
                     $run->setCurrent($current);

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="">
+    <list default="true" id="6964749e-2258-4b8a-b87c-566c2bc6c177" name="Default Changelist" comment="small changes">
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/challenge/challenge.index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/challenge/challenge.index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +34,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="6e2ae70c-bb91-4a19-b646-5960610cb750" name="localhost" />
@@ -163,7 +171,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.offline" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -172,16 +180,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
       <recent name="C:\Dev\xampp\htdocs\trainer\src\Form" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\challenge" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\home" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\bootstrap" />
-      <recent name="C:\Dev\xampp\htdocs\trainer\public\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
       <recent name="C:\Dev\xampp\htdocs\trainer\src\Controller\Admin" />
       <recent name="C:\Dev\xampp\htdocs\trainer\templates\section" />
-      <recent name="C:\Dev\xampp\htdocs\trainer\.offline" />
     </key>
   </component>
   <component name="RunManager">
@@ -268,14 +276,9 @@
       <workItem from="1608977538080" duration="12716000" />
       <workItem from="1608994925835" duration="47000" />
       <workItem from="1609001572983" duration="247000" />
-      <workItem from="1609026280831" duration="353000" />
-    </task>
-    <task id="LOCAL-00008" summary="enable dropdowns">
-      <created>1602418048625</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1602418048625</updated>
+      <workItem from="1609026280831" duration="491000" />
+      <workItem from="1609029920437" duration="2911000" />
+      <workItem from="1609054615059" duration="2221000" />
     </task>
     <task id="LOCAL-00009" summary="add category controller">
       <created>1602425128856</created>
@@ -613,7 +616,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608994959425</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="small changes">
+      <created>1609026649469</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1609026649470</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +645,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="include all answers in loop" />
     <MESSAGE value="category edit" />
     <MESSAGE value="todos" />
     <MESSAGE value="installed datafixtures" />
@@ -660,9 +669,21 @@
     <MESSAGE value="fix nav, add logout link" />
     <MESSAGE value="login form styling" />
     <MESSAGE value="delete loginType" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete loginType" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/SecurityController.php</url>
+          <line>51</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/trainer@phpunit_xml_dist.xml" NAME="phpunit.xml.dist Coverage Results" MODIFIED="1603140485308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

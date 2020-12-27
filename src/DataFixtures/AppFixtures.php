@@ -6,6 +6,7 @@ use App\DataFixtures\data\Composer;
 use App\DataFixtures\data\Git;
 use App\DataFixtures\data\Http;
 use App\DataFixtures\data\LinuxCommandLine;
+use App\DataFixtures\data\Mysql;
 use App\DataFixtures\data\Npm;
 use App\DataFixtures\data\Runmodes;
 use App\Entity\Challenge;
@@ -40,6 +41,7 @@ class AppFixtures extends Fixture
         $this->loadHttpSection($manager);
         $this->loadNpmSection($manager);
         $this->loadComposerSection($manager);
+        $this->loadMysqlSection($manager);
         $manager->flush();
     }
 
@@ -85,14 +87,14 @@ class AppFixtures extends Fixture
     /**
      * @param ObjectManager $manager
      */
-    public function loadGitSection(ObjectManager $manager): void
+    public function loadHttpSection(ObjectManager $manager): void
     {
         $section = new ChallengeSection();
         $section->setPosition(2);
-        $section->setName(Git::$name);
+        $section->setName(Http::$name);
         $manager->persist($section);
 
-        $this->processDataTextField(Git::$data, $section, $manager);
+        $this->processDataTextField(Http::$data, $section, $manager);
 
         $manager->flush();
     }
@@ -100,14 +102,14 @@ class AppFixtures extends Fixture
     /**
      * @param ObjectManager $manager
      */
-    public function loadHttpSection(ObjectManager $manager): void
+    public function loadGitSection(ObjectManager $manager): void
     {
         $section = new ChallengeSection();
         $section->setPosition(3);
-        $section->setName(Http::$name);
+        $section->setName(Git::$name);
         $manager->persist($section);
 
-        $this->processDataTextField(Http::$data, $section, $manager);
+        $this->processDataTextField(Git::$data, $section, $manager);
 
         $manager->flush();
     }
@@ -138,6 +140,21 @@ class AppFixtures extends Fixture
         $manager->persist($section);
 
         $this->processDataTextField(Composer::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadMysqlSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(6);
+        $section->setName(Mysql::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Mysql::$data, $section, $manager);
 
         $manager->flush();
     }

@@ -2,7 +2,12 @@
 
 namespace App\DataFixtures;
 
+use App\DataFixtures\data\Composer;
+use App\DataFixtures\data\Git;
+use App\DataFixtures\data\Http;
 use App\DataFixtures\data\LinuxCommandLine;
+use App\DataFixtures\data\Npm;
+use App\DataFixtures\data\Runmodes;
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
@@ -31,38 +36,23 @@ class AppFixtures extends Fixture
         $this->loadUsers($manager);
         $this->loadRunModes($manager);
         $this->loadLinuxCommandLineSection($manager);
+        $this->loadGitSection($manager);
+        $this->loadHttpSection($manager);
+        $this->loadNpmSection($manager);
+        $this->loadComposerSection($manager);
         $manager->flush();
     }
 
     private function loadRunModes(ObjectManager $manager)
     {
-        $mode = new RunMode();
-        $mode->setType(RunMode::TYPE_RANDOM);
-        $mode->setName('Random 10');
-        $mode->setLength(10);
-        $mode->setPosition(0);
-        $manager->persist($mode);
-
-        $mode = new RunMode();
-        $mode->setType(RunMode::TYPE_RANDOM);
-        $mode->setName('Random 25');
-        $mode->setLength(25);
-        $mode->setPosition(1);
-        $manager->persist($mode);
-
-        $mode = new RunMode();
-        $mode->setType(RunMode::TYPE_RANDOM);
-        $mode->setName('Random 50');
-        $mode->setLength(50);
-        $mode->setPosition(2);
-        $manager->persist($mode);
-
-        $mode = new RunMode();
-        $mode->setType(RunMode::TYPE_ALL);
-        $mode->setName('All');
-        $mode->setLength(null);
-        $mode->setPosition(3);
-        $manager->persist($mode);
+        foreach (Runmodes::$data as $mode) {
+            $runMode = new RunMode();
+            $runMode->setType($mode['type']);
+            $runMode->setName($mode['name']);
+            $runMode->setLength($mode['length']);
+            $runMode->setPosition($mode['position']);
+            $manager->persist($runMode);
+        }
     }
 
     private function loadUsers(ObjectManager $manager)
@@ -87,8 +77,75 @@ class AppFixtures extends Fixture
         $section->setName(LinuxCommandLine::$name);
         $manager->persist($section);
 
+        $this->processDataTextField(LinuxCommandLine::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadGitSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(2);
+        $section->setName(Git::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Git::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadHttpSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(3);
+        $section->setName(Http::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Http::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadNpmSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(4);
+        $section->setName(Npm::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Npm::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadComposerSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(5);
+        $section->setName(Composer::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Composer::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    private function processDataTextField(array $data, ChallengeSection $section, ObjectManager $manager)
+    {
         $countCategories = 0;
-        foreach (LinuxCommandLine::$data as $categoryName => $categoryData) {
+        foreach ($data as $categoryName => $categoryData) {
             $category = new ChallengeCategory();
             $category->setPosition(++$countCategories);
             $category->setName($categoryName);
@@ -113,7 +170,5 @@ class AppFixtures extends Fixture
                 $manager->persist($challenge);
             }
         }
-
-        $manager->flush();
     }
 }

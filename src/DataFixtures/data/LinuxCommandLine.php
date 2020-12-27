@@ -13,7 +13,7 @@ class LinuxCommandLine
     public const tail = [
         [
             'name' => 'Show the last 10 lines of a file',
-            'content' => 'Show the last 10 lines of the file \"test.txt\"',
+            'content' => 'Show the last 10 lines of the file "test.txt"',
             'answers' => [
                 'tail test.txt',
                 'tail -10 test.txt',
@@ -24,7 +24,7 @@ class LinuxCommandLine
         ],
         [
             'name' => 'Show the last 7 lines of a file',
-            'content' => 'Show the last 7 lines of the file \"test.txt\"',
+            'content' => 'Show the last 7 lines of the file "test.txt"',
             'answers' => [
                 'tail -7 test.txt',
                 'tail -n7 test.txt'
@@ -33,7 +33,7 @@ class LinuxCommandLine
         ],
         [
             'name' => 'Show the last lines of a file starting from n',
-            'content' => 'Show the last lines of \"test.txt\" starting from line 3',
+            'content' => 'Show the last lines of "test.txt" starting from line 3',
             'answers' => [
                 'tail -n +3 test.txt'
             ],

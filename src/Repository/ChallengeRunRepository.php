@@ -23,13 +23,17 @@ class ChallengeRunRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param User $user
      * @return ChallengeRun|null
      */
-    public function findRun(): ?ChallengeRun
+    public function findRun(User $user): ?ChallengeRun
     {
         $qb = $this->createQueryBuilder('c');
         try {
-            return $qb->andWhere($qb->expr()->isNotNull('c.current'))
+            return $qb
+                ->andWhere($qb->expr()->isNotNull('c.current'))
+                ->andWhere($qb->expr()->eq('c.user', ':user'))
+                ->setParameter(':user', $user)
                 ->orderBy('c.created', 'DESC')
                 ->setMaxResults(1)
                 ->getQuery()

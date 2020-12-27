@@ -28,11 +28,12 @@ class HomeController extends BaseController
         ChallengeRunRepository $runRepo,
         ChallengeSelector $selector): Response
     {
-        $run = $runRepo->findRun();
+        $user = $this->getUser();
+        $run = $runRepo->findRun($user);
 
         if (!$run) {
             $run = new ChallengeRun();
-            $run->setUser($this->getUser());
+            $run->setUser($user);
 
             $form = $this->createForm(ChallengeRunType::class, $run);
             $form->handleRequest($request);

@@ -179,42 +179,6 @@ class Http
                 'note' => '',
                 'link' => ''
             ],
-            [
-                'name' => 'Service Unavailable',
-                'content' => 'Service Unavailable',
-                'answers' => [
-                    '503',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Service Unavailable',
-                'content' => 'Service Unavailable',
-                'answers' => [
-                    '503',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Service Unavailable',
-                'content' => 'Service Unavailable',
-                'answers' => [
-                    '503',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Service Unavailable',
-                'content' => 'Service Unavailable',
-                'answers' => [
-                    '503',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
         ]
     ];
 }

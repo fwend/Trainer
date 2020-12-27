@@ -18,12 +18,12 @@
             <div class="card-body">
                 <p class="card-text">{{ challenge.content }}</p>
                 <div class="mt-5">
-                    {{ form_row(form.answer) }}
+                    {{ form_row(form.answer, {'attr' : {'autofocus' : true}}) }}
                 </div>
             </div>
         </div>
         <div class="float-right mt-2">
-            <button class="btn btn-primary" autofocus type="submit">submit answer</button>
+            <button class="btn btn-primary" type="submit">submit answer</button>
         </div>
     </div>
     {{ form_end(form) }}

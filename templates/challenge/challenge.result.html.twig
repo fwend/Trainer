@@ -47,7 +47,9 @@
             </div>
         {% endif %}
         <div class="float-right mt-2">
-            <a href="{{ path('take_challenge', {'run' : run.id}) }}" class="btn btn-primary">next challenge</a>
+            <a href="{{ path('take_challenge', {'run' : run.id}) }}" autofocus class="btn btn-primary">
+                next challenge
+            </a>
         </div>
     </div>
 {% endblock %}

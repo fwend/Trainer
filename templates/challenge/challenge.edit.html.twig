@@ -6,6 +6,15 @@
     {{ adding ? 'Add' : 'Edit' }} Challenge - {{ challenge.category.section }} - {{ challenge.category }}
 {% endblock %}
 
+{% macro answer(input) %}
+<div data-delete-target class="answer row mt-1">
+    <div class="col-11">{{ form_widget(input) }}</div>
+    <div class="col-1">
+        <button data-delete-button class="btn btn-secondary" type="button">x</button>
+    </div>
+</div>
+{% endmacro %}
+
 {% block body %}
     {{ parent() }}
     {{ form_start(form) }}
@@ -27,15 +36,10 @@
 
                 <div id="challenge_answers"
                      class="mb-3"
-                     data-prototype="{{ form_widget(form.answers.vars.prototype)|e('html_attr') }}">
+                     data-prototype="{{ _self.answer(form.answers.vars.prototype)|e('html_attr') }}">
 
                     {% for answer in form.answers %}
-                        <div data-delete-target class="answer row mt-1">
-                            <div class="col-11">{{ form_widget(answer) }}</div>
-                            <div class="col-1">
-                                <button data-delete-button class="btn btn-secondary" type="button">x</button>
-                            </div>
-                        </div>
+                        {{ _self.answer(answer) }}
                     {% endfor %}
                 </div>
 

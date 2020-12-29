@@ -8,6 +8,7 @@ use App\DataFixtures\data\Http;
 use App\DataFixtures\data\LinuxCommandLine;
 use App\DataFixtures\data\Mysql;
 use App\DataFixtures\data\Npm;
+use App\DataFixtures\data\Ports;
 use App\DataFixtures\data\Runmodes;
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
@@ -42,6 +43,7 @@ class AppFixtures extends Fixture
         $this->loadNpmSection($manager);
         $this->loadComposerSection($manager);
         $this->loadMysqlSection($manager);
+        $this->loadPortsSection($manager);
         $manager->flush();
     }
 
@@ -155,6 +157,21 @@ class AppFixtures extends Fixture
         $manager->persist($section);
 
         $this->processDataTextField(Mysql::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadPortsSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(7);
+        $section->setName(Ports::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Ports::$data, $section, $manager);
 
         $manager->flush();
     }

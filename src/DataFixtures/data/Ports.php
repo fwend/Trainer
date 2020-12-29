@@ -28,7 +28,7 @@ class Ports
             ],
             [
                 'name' => 'File Transfer Protocol (FTP) data transfer',
-                'content' => 'File Transfer Protocol data transfer',
+                'content' => 'File Transfer Protocol: data transfer',
                 'answers' => [
                     '20',
                 ],
@@ -37,7 +37,7 @@ class Ports
             ],
             [
                 'name' => 'File Transfer Protocol (FTP) control',
-                'content' => 'File Transfer Protocol control',
+                'content' => 'File Transfer Protocol: control',
                 'answers' => [
                     '21',
                 ],

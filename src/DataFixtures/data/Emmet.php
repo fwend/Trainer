@@ -17,7 +17,30 @@ class Emmet
                 ],
                 'note' => '',
                 'link' => 'https://docs.emmet.io/cheat-sheet/'
-            ]
+            ],
+            [
+                'name' => 'Child >',
+                'content' =>
+'<nav>
+    <ul>
+        <li></li>
+    </ul>
+</nav>',
+                'answers' => [
+                    'nav>ul>li'
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Multiplication *',
+                'content' => '',
+                'answers' => [
+                    'nav>ul>li'
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
         ],
         'css' => [
             [

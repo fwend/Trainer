@@ -5,11 +5,19 @@
 {% block body %}
     {{ parent() }}
     <div class="mx-5 mt-5">
+        <h4 class="mb-3">The following training is ongoing</h4>
+            {{ run.section.name }}<br>
+            {{ run.mode.name }}<br>
+            {{ 'Challenges done: ' ~ run.count}}<br>
+
+
         <a href="{{ path('endrun', {'run': run.id}) }}"
-           class="btn btn-primary mr-2" type="submit" style="width: 5rem">
+           class="btn btn-primary mr-2 mt-5" type="submit" style="width: 5rem">
             clear
         </a>
-        <a href="{{ path('take_challenge', {'run': run.id}) }}" class="btn btn-primary" type="submit">continue</a>
+        <a href="{{ path('take_challenge', {'run': run.id}) }}" class="btn btn-primary mt-5" type="submit">
+            continue
+        </a>
     </div>
 {% endblock %}
 

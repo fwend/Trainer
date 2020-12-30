@@ -7,12 +7,12 @@
     {{ parent() }}
     {{ form_start(form) }}
     <div class="mt-5 mx-5 jumbotron">
-        <h1 class="display-4">Start training run</h1>
+        <h1 class="display-4">Command line training</h1>
         <p class="lead">Choose a training section and pick a mode</p>
         {{ form_row(form.section) }}
         {{ form_row(form.mode) }}
         <p class="lead">
-            <button class="btn btn-primary btn-lg" type="submit">Start training</button>
+            <button class="btn btn-primary btn-lg" type="submit">Start training run</button>
         </p>
     </div>
     {{ form_end(form) }}

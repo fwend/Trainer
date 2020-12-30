@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\DataFixtures\data\Composer;
+use App\DataFixtures\data\Emmet;
 use App\DataFixtures\data\Git;
 use App\DataFixtures\data\Http;
 use App\DataFixtures\data\LinuxCommandLine;
@@ -51,6 +52,7 @@ class AppFixtures extends Fixture
         $this->loadComposerSection($manager);
         $this->loadMysqlSection($manager);
         $this->loadPortsSection($manager);
+        $this->loadEmmetSection($manager);
         $manager->flush();
     }
 
@@ -179,6 +181,21 @@ class AppFixtures extends Fixture
         $manager->persist($section);
 
         $this->processDataTextField(Ports::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadEmmetSection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(7);
+        $section->setName(Emmet::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Emmet::$data, $section, $manager);
 
         $manager->flush();
     }

@@ -15,7 +15,7 @@ class Ports
                     '7',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Quote of the Day (QOTD)',
@@ -24,25 +24,25 @@ class Ports
                     '17',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'File Transfer Protocol (FTP) data transfer',
-                'content' => 'File Transfer Protocol: data transfer',
+                'content' => 'File Transfer Protocol: data transfer (Secure)',
                 'answers' => [
-                    '20',
+                    '20 (989)',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'File Transfer Protocol (FTP) control',
-                'content' => 'File Transfer Protocol: control',
+                'content' => 'File Transfer Protocol: control (Secure)',
                 'answers' => [
-                    '21',
+                    '21 (990)',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Secure Shell (SSH)',
@@ -55,12 +55,12 @@ class Ports
             ],
             [
                 'name' => 'Simple Mail Transfer Protocol (SMTP)',
-                'content' => 'Simple Mail Transfer Protocol',
+                'content' => 'Simple Mail Transfer Protocol (Secure)',
                 'answers' => [
-                    '25',
+                    '25 (465)',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'WHOIS protocol',
@@ -69,7 +69,7 @@ class Ports
                     '43',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Domain Name System (DNS)',
@@ -78,25 +78,25 @@ class Ports
                     '53',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Hypertext Transfer Protocol (HTTP)',
-                'content' => 'Hypertext Transfer Protocol',
+                'content' => 'Hypertext Transfer Protocol (Secure)',
                 'answers' => [
-                    '80',
+                    '80 (443)',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Network News Transfer Protocol (NNTP)',
-                'content' => 'Network News Transfer Protocol',
+                'content' => 'Network News Transfer Protocol (Secure)',
                 'answers' => [
-                    '119',
+                    '119 (563)',
                 ],
                 'note' => 'Usenet',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Network Time Protocol (NTP)',
@@ -105,25 +105,16 @@ class Ports
                     '123',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Internet Relay Chat (IRC)',
-                'content' => 'Internet Relay Chat',
+                'content' => 'Internet Relay Chat (Secure)',
                 'answers' => [
-                    '194',
+                    '194 (994)',
                 ],
                 'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Hypertext Transfer Protocol Secure (HTTPS)',
-                'content' => 'Hypertext Transfer Protocol Secure',
-                'answers' => [
-                    '443',
-                ],
-                'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'Remote procedure call (RPC)',
@@ -132,7 +123,7 @@ class Ports
                     '530',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
                 'name' => 'DOOM',
@@ -141,70 +132,25 @@ class Ports
                     '666',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
-                'name' => 'Internet Message Access Protocol Secure (IMAPS)',
-                'content' => 'Internet Message Access Protocol Secure',
+                'name' => 'Internet Message Access Protocol (IMAP)',
+                'content' => 'Internet Message Access Protocol (Secure)',
                 'answers' => [
-                    '993',
+                    '143 (993)',
                 ],
                 'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
             [
-                'name' => 'FTPS Protocol (data), FTP Secure',
-                'content' => 'FTPS Protocol (data)',
+                'name' => 'Post Office Protocol 3 (POP3)',
+                'content' => 'Post Office Protocol 3 (Secure)',
                 'answers' => [
-                    '989',
+                    '110 (995) ',
                 ],
                 'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'FTPS Protocol (control), FTP Secure',
-                'content' => 'FTPS Protocol (control), FTP Secure',
-                'answers' => [
-                    '990',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Internet Relay Chat Secure (IRCS)',
-                'content' => 'Internet Relay Chat Secure',
-                'answers' => [
-                    '994',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Post Office Protocol 3 Secure (POP3S)',
-                'content' => 'Post Office Protocol 3 Secure',
-                'answers' => [
-                    '995',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'NNTP Secure (NNTPS)',
-                'content' => 'NNTP Secure',
-                'answers' => [
-                    '563',
-                ],
-                'note' => '',
-                'link' => ''
-            ],
-            [
-                'name' => 'Authenticated SMTP Secure (SMTPS)',
-                'content' => 'Authenticated SMTP Secure',
-                'answers' => [
-                    '465',
-                ],
-                'note' => '',
-                'link' => ''
+                'link' => 'https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'
             ],
         ]
     ];

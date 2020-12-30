@@ -16,6 +16,8 @@ use App\Entity\ChallengeSection;
 use App\Entity\RunMode;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\DBAL\Exception;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -24,10 +26,14 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AppFixtures extends Fixture
 {
     private UserPasswordEncoderInterface $passwordEncoder;
+    private EntityManagerInterface $em;
 
-    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(
+        EntityManagerInterface $em,
+        UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
+        $this->em = $em;
     }
 
     /**
@@ -35,6 +41,7 @@ class AppFixtures extends Fixture
      */
     public function load(ObjectManager $manager): void
     {
+        $this->resetAutoIncrement();
         $this->loadUsers($manager);
         $this->loadRunModes($manager);
         $this->loadLinuxCommandLineSection($manager);
@@ -203,6 +210,24 @@ class AppFixtures extends Fixture
                 }
                 $manager->persist($challenge);
             }
+        }
+    }
+
+    private function resetAutoIncrement()
+    {
+        try {
+            $this->em->getConnection()->executeStatement(
+                 /** @lang Text */
+                'ALTER TABLE trainer.challenge AUTO_INCREMENT = 1;
+                 ALTER TABLE trainer.challenge_category AUTO_INCREMENT = 1;
+                 ALTER TABLE trainer.challenge_run AUTO_INCREMENT = 1;
+                 ALTER TABLE trainer.challenge_section AUTO_INCREMENT = 1;
+                 ALTER TABLE trainer.run_history AUTO_INCREMENT = 1;
+                 ALTER TABLE trainer.run_mode AUTO_INCREMENT = 1;
+                 ALTER TABLE trainer.user AUTO_INCREMENT = 1;'
+            );
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
     }
 }

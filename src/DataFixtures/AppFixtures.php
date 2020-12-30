@@ -31,25 +31,12 @@ class AppFixtures extends Fixture
     private UserPasswordEncoderInterface $passwordEncoder;
     private EntityManagerInterface $em;
 
-    private array $sections = [];
-
     public function __construct(
         EntityManagerInterface $em,
         UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
         $this->em = $em;
-
-        $this->sections[LinuxCommandLine::$name] = LinuxCommandLine::$data;
-        $this->sections[Http::$name] = Http::$data;
-        $this->sections[Git::$name] = Git::$data;
-        $this->sections[Composer::$name] = Composer::$data;
-        $this->sections[Npm::$name] = Npm::$data;
-        $this->sections[Emmet::$name] = Emmet::$data;
-        $this->sections[Mysql::$name] = Mysql::$data;
-        $this->sections[Ports::$name] = Ports::$data;
-        $this->sections[Doctrine::$name] = Doctrine::$data;
-        $this->sections[Symfony::$name] = Symfony::$data;
     }
 
     /**
@@ -91,18 +78,34 @@ class AppFixtures extends Fixture
 
     private function loadSections(ObjectManager $manager)
     {
-        $count = 0;
-        foreach ($this->sections as $name => $data) {
+        $sections = [
+            LinuxCommandLine::$name => LinuxCommandLine::$data,
+            Http::$name => Http::$data,
+            Git::$name => Git::$data,
+            Composer::$name => Composer::$data,
+            Npm::$name => Npm::$data,
+            Emmet::$name => Emmet::$data,
+            Mysql::$name => Mysql::$data,
+            Ports::$name => Ports::$data,
+            Doctrine::$name => Doctrine::$data,
+            Symfony::$name => Symfony::$data
+        ];
+
+        $position = 0;
+        foreach ($sections as $name => $data) {
             $section = new ChallengeSection();
-            $section->setPosition(++$count);
+            $section->setPosition(++$position);
             $section->setName($name);
             $manager->persist($section);
 
-            $this->processDataTextField($data, $section, $manager);
+            $this->processData($data, $section, $manager);
         }
     }
 
-    private function processDataTextField(array $data, ChallengeSection $section, ObjectManager $manager)
+    private function processData(
+        array $data,
+        ChallengeSection $section,
+        ObjectManager $manager)
     {
         $countCategories = 0;
         foreach ($data as $categoryName => $categoryData) {
@@ -136,7 +139,7 @@ class AppFixtures extends Fixture
     {
         try {
             $this->em->getConnection()->executeStatement(
-                 /** @lang Text */
+            /** @lang Text */
                 'ALTER TABLE trainer.challenge AUTO_INCREMENT = 1;
                  ALTER TABLE trainer.challenge_category AUTO_INCREMENT = 1;
                  ALTER TABLE trainer.challenge_run AUTO_INCREMENT = 1;

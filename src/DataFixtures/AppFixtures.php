@@ -12,6 +12,7 @@ use App\DataFixtures\data\Mysql;
 use App\DataFixtures\data\Npm;
 use App\DataFixtures\data\Ports;
 use App\DataFixtures\data\Runmodes;
+use App\DataFixtures\data\Symfony;
 use App\Entity\Challenge;
 use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
@@ -55,6 +56,7 @@ class AppFixtures extends Fixture
         $this->loadPortsSection($manager);
         $this->loadEmmetSection($manager);
         $this->loadDoctrineSection($manager);
+        $this->loadSymfonySection($manager);
         $manager->flush();
     }
 
@@ -213,6 +215,21 @@ class AppFixtures extends Fixture
         $manager->persist($section);
 
         $this->processDataTextField(Doctrine::$data, $section, $manager);
+
+        $manager->flush();
+    }
+
+    /**
+     * @param ObjectManager $manager
+     */
+    public function loadSymfonySection(ObjectManager $manager): void
+    {
+        $section = new ChallengeSection();
+        $section->setPosition(10);
+        $section->setName(Symfony::$name);
+        $manager->persist($section);
+
+        $this->processDataTextField(Symfony::$data, $section, $manager);
 
         $manager->flush();
     }

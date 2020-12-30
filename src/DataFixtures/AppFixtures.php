@@ -31,12 +31,25 @@ class AppFixtures extends Fixture
     private UserPasswordEncoderInterface $passwordEncoder;
     private EntityManagerInterface $em;
 
+    private array $sections = [];
+
     public function __construct(
         EntityManagerInterface $em,
         UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
         $this->em = $em;
+
+        $this->sections[LinuxCommandLine::$name] = LinuxCommandLine::$data;
+        $this->sections[Http::$name] = Http::$data;
+        $this->sections[Git::$name] = Git::$data;
+        $this->sections[Composer::$name] = Composer::$data;
+        $this->sections[Npm::$name] = Npm::$data;
+        $this->sections[Emmet::$name] = Emmet::$data;
+        $this->sections[Mysql::$name] = Mysql::$data;
+        $this->sections[Ports::$name] = Ports::$data;
+        $this->sections[Doctrine::$name] = Doctrine::$data;
+        $this->sections[Symfony::$name] = Symfony::$data;
     }
 
     /**
@@ -47,16 +60,8 @@ class AppFixtures extends Fixture
         $this->resetAutoIncrement();
         $this->loadUsers($manager);
         $this->loadRunModes($manager);
-        $this->loadLinuxCommandLineSection($manager);
-        $this->loadGitSection($manager);
-        $this->loadHttpSection($manager);
-        $this->loadNpmSection($manager);
-        $this->loadComposerSection($manager);
-        $this->loadMysqlSection($manager);
-        $this->loadPortsSection($manager);
-        $this->loadEmmetSection($manager);
-        $this->loadDoctrineSection($manager);
-        $this->loadSymfonySection($manager);
+        $this->loadSections($manager);
+
         $manager->flush();
     }
 
@@ -84,154 +89,17 @@ class AppFixtures extends Fixture
         $manager->persist($user);
     }
 
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadLinuxCommandLineSection(ObjectManager $manager): void
+    private function loadSections(ObjectManager $manager)
     {
-        $section = new ChallengeSection();
-        $section->setPosition(1);
-        $section->setName(LinuxCommandLine::$name);
-        $manager->persist($section);
+        $count = 0;
+        foreach ($this->sections as $name => $data) {
+            $section = new ChallengeSection();
+            $section->setPosition(++$count);
+            $section->setName($name);
+            $manager->persist($section);
 
-        $this->processDataTextField(LinuxCommandLine::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadHttpSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(2);
-        $section->setName(Http::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Http::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadGitSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(3);
-        $section->setName(Git::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Git::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadNpmSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(4);
-        $section->setName(Npm::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Npm::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadComposerSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(5);
-        $section->setName(Composer::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Composer::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadMysqlSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(6);
-        $section->setName(Mysql::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Mysql::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadPortsSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(7);
-        $section->setName(Ports::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Ports::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadEmmetSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(8);
-        $section->setName(Emmet::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Emmet::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadDoctrineSection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(9);
-        $section->setName(Doctrine::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Doctrine::$data, $section, $manager);
-
-        $manager->flush();
-    }
-
-    /**
-     * @param ObjectManager $manager
-     */
-    public function loadSymfonySection(ObjectManager $manager): void
-    {
-        $section = new ChallengeSection();
-        $section->setPosition(10);
-        $section->setName(Symfony::$name);
-        $manager->persist($section);
-
-        $this->processDataTextField(Symfony::$data, $section, $manager);
-
-        $manager->flush();
+            $this->processDataTextField($data, $section, $manager);
+        }
     }
 
     private function processDataTextField(array $data, ChallengeSection $section, ObjectManager $manager)

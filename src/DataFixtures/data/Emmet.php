@@ -298,6 +298,24 @@ class Emmet
                 'note' => '',
                 'link' => 'https://docs.emmet.io/cheat-sheet/'
             ],
+            [
+                'name' => 'Margin',
+                'content' => 'margin:auto;',
+                'answers' => [
+                    'm:a',
+                ],
+                'note' => 'Also mt:a (top auto), mr, ml, same for padding',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Font',
+                'content' => 'margin:auto;',
+                'answers' => [
+                    'm:a',
+                ],
+                'note' => 'Also mt:a (top auto), mr, ml, same for padding',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
         ],
     ];
 }

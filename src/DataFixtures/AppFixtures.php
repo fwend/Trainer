@@ -18,6 +18,7 @@ use App\Entity\ChallengeCategory;
 use App\Entity\ChallengeSection;
 use App\Entity\RunMode;
 use App\Entity\User;
+use App\Services\HtmlFormatter;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\DBAL\Exception;
 use Doctrine\ORM\EntityManagerInterface;
@@ -30,13 +31,16 @@ class AppFixtures extends Fixture
 {
     private UserPasswordEncoderInterface $passwordEncoder;
     private EntityManagerInterface $em;
+    private HtmlFormatter $formatter;
 
     public function __construct(
         EntityManagerInterface $em,
-        UserPasswordEncoderInterface $passwordEncoder)
+        UserPasswordEncoderInterface $passwordEncoder,
+        HtmlFormatter $formatter)
     {
         $this->passwordEncoder = $passwordEncoder;
         $this->em = $em;
+        $this->formatter = $formatter;
     }
 
     /**
@@ -120,7 +124,7 @@ class AppFixtures extends Fixture
                 $challenge = new Challenge();
                 $challenge->setPosition($idx);
                 $challenge->setName($challengeData['name']);
-                $challenge->setContent($challengeData['content']);
+                $challenge->setContent($this->format($challengeData));
                 $challenge->setAnswers($challengeData['answers']);
                 $challenge->setCategory($category);
                 $category->addChallenge($challenge);
@@ -151,5 +155,13 @@ class AppFixtures extends Fixture
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+    }
+
+    private function format(array $data): string
+    {
+        if (isset($data['format'])) {
+            return $this->formatter->format($data['content']);
+        }
+        return $data['content'];
     }
 }

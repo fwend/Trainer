@@ -308,12 +308,113 @@ class Emmet
                 'link' => 'https://docs.emmet.io/cheat-sheet/'
             ],
             [
-                'name' => 'Font',
-                'content' => 'margin:auto;',
+                'name' => 'Font weight',
+                'content' => 'font-weight:normal;',
                 'answers' => [
-                    'm:a',
+                    'fw:n',
                 ],
-                'note' => 'Also mt:a (top auto), mr, ml, same for padding',
+                'note' => 'Also fw:b, fw:br (bolder), fw:lr (lighter) ',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Font size',
+                'content' => 'font-size:;',
+                'answers' => [
+                    'fz',
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Font family',
+                'content' => 'font-family: serif;',
+                'answers' => [
+                    'ff:s',
+                ],
+                'note' => 'Also ff:ss (sans-serif), ff:m (monospace)',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Text align',
+                'content' => 'text-align: left;',
+                'answers' => [
+                    'ta',
+                    'ta:l',
+                ],
+                'note' => 'Also ta:r, ta:c, ta:j (justify)',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Text decoration',
+                'content' => 'text-decoration: none;',
+                'answers' => [
+                    'td',
+                    'td:n',
+                ],
+                'note' => 'Also td:u (underline)',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Text transform',
+                'content' => 'text-transform: lowercase;',
+                'answers' => [
+                    'tt:l',
+                ],
+                'note' => 'Also tt, tt:u (uppercase), tt:c (capitalize), tt:n (none)',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Background',
+                'content' => 'background-color:;',
+                'answers' => [
+                    'bgc',
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Color',
+                'content' => 'color:;',
+                'answers' => [
+                    'c',
+                ],
+                'note' => 'Also c:r (rgb), c:ra (rgba), op (opacity)',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Border 1',
+                'content' => 'border:;',
+                'answers' => [
+                    'bd',
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Border 2',
+                'content' => 'border:1px solid #000;',
+                'answers' => [
+                    'bd+',
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Important',
+                'content' => '!important;',
+                'answers' => [
+                    '!',
+                ],
+                'note' => '',
+                'link' => 'https://docs.emmet.io/cheat-sheet/'
+            ],
+            [
+                'name' => 'Keyframes',
+                'content' => 'Keyframes',
+                'answers' => [
+                    '@kf',
+                ],
+                'note' => '',
                 'link' => 'https://docs.emmet.io/cheat-sheet/'
             ],
         ],

@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures\data;
 
-class Http
+class HttpStatusCodes
 {
     public static string $name = 'Http status codes';
 

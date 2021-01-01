@@ -6,7 +6,8 @@ use App\DataFixtures\data\Composer;
 use App\DataFixtures\data\Doctrine;
 use App\DataFixtures\data\Emmet;
 use App\DataFixtures\data\Git;
-use App\DataFixtures\data\Http;
+use App\DataFixtures\data\HttpHeaders;
+use App\DataFixtures\data\HttpStatusCodes;
 use App\DataFixtures\data\LinuxCommandLine;
 use App\DataFixtures\data\Mysql;
 use App\DataFixtures\data\Npm;
@@ -84,7 +85,8 @@ class AppFixtures extends Fixture
     {
         $sections = [
             LinuxCommandLine::$name => LinuxCommandLine::$data,
-            Http::$name => Http::$data,
+            HttpStatusCodes::$name => HttpStatusCodes::$data,
+            HttpHeaders::$name => HttpHeaders::$data,
             Git::$name => Git::$data,
             Composer::$name => Composer::$data,
             Npm::$name => Npm::$data,

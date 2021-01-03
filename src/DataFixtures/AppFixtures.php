@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\DataFixtures\data\Composer;
+use App\DataFixtures\data\Dns;
 use App\DataFixtures\data\Doctrine;
 use App\DataFixtures\data\Emmet;
 use App\DataFixtures\data\Git;
@@ -94,7 +95,8 @@ class AppFixtures extends Fixture
             Mysql::$name => Mysql::$data,
             Ports::$name => Ports::$data,
             Doctrine::$name => Doctrine::$data,
-            Symfony::$name => Symfony::$data
+            Symfony::$name => Symfony::$data,
+            Dns::$name => Dns::$data,
         ];
 
         $position = 0;

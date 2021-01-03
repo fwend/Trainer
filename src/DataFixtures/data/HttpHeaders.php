@@ -80,6 +80,9 @@ class HttpHeaders
                 'note' => 'Set-Cookie: <cookie-name>=<cookie-value>; <attributes>. For instance: Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT',
                 'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie'
             ],
+            'attributes' => [
+
+            ]
         ]
     ];
 }

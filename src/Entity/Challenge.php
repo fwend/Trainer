@@ -35,7 +35,7 @@ class Challenge extends Entity
     private ?int $score = 0;
 
     /**
-     * @ORM\Column(type="text", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private ?string $note = null;
 

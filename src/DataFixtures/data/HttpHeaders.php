@@ -80,6 +80,83 @@ class HttpHeaders
                 'note' => 'Set-Cookie: <cookie-name>=<cookie-value>; <attributes>. For instance: Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT',
                 'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie'
             ],
+            [
+                'name' => 'Authentication 1',
+                'content' => 'Defines the authentication method that should be used to access a resource.',
+                'answers' => [
+                    'WWW-Authenticate',
+                ],
+                'note' => 'WWW-Authenticate: Basic realm="Access to the staging site", charset="UTF-8"',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate'
+            ],
+            [
+                'name' => 'Authentication 2',
+                'content' => 'Contains the credentials to authenticate a user-agent with a server.',
+                'answers' => [
+                    'Authorization',
+                ],
+                'note' => 'Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization'
+            ],
+            [
+                'name' => 'Caching 1',
+                'content' => 'Contains the time in seconds the object has been in a proxy cache.',
+                'answers' => [
+                    'Age',
+                ],
+                'note' => 'Age: 24',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Age'
+            ],
+            [
+                'name' => 'Caching 2',
+                'content' => 'Holds directives for caching in both requests and responses.',
+                'answers' => [
+                    'Cache-Control',
+                ],
+                'note' => 'Cache-Control: no-cache, Cache-Control: max-age=<seconds>',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control'
+            ],
+            [
+                'name' => 'Caching 3',
+                'content' => 'Contains the date/time after which the response is considered stale.',
+                'answers' => [
+                    'Expires',
+                ],
+                'note' => 'Expires: <http-date>, Expires: Wed, 21 Oct 2015 07:28:00 GMT',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires'
+            ],
+            [
+                'name' => '',
+                'content' => '.',
+                'answers' => [
+                    '',
+                ],
+                'note' => '',
+                'link' => ''
+            ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             'attributes' => [
 
             ]

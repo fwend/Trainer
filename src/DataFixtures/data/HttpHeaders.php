@@ -188,6 +188,51 @@ class HttpHeaders
                 'note' => 'Vary: User-Agent',
                 'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary'
             ],
+            [
+                'name' => 'Message body information 1',
+                'content' => 'The size of the resource, in decimal number of bytes.',
+                'answers' => [
+                    'Content-Length',
+                ],
+                'note' => 'Content-Length: 523',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length'
+            ],
+            [
+                'name' => 'Message body information 2',
+                'content' => 'Indicates the media type of the resource.',
+                'answers' => [
+                    'Content-Type',
+                ],
+                'note' => 'Content-Type: multipart/form-data; boundary=something',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type'
+            ],
+            [
+                'name' => 'Message body information 3',
+                'content' => 'Used to specify the compression algorithm.',
+                'answers' => [
+                    'Content-Encoding',
+                ],
+                'note' => 'Content-Encoding: gzip',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding'
+            ],
+            [
+                'name' => 'Message body information 4',
+                'content' => 'Describes the human language(s) intended for the audience.',
+                'answers' => [
+                    'Content-Language',
+                ],
+                'note' => 'Content-Language: de-DE',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language'
+            ],
+            [
+                'name' => 'Message body information 5',
+                'content' => 'Indicates an alternate location for the returned data.',
+                'answers' => [
+                    'Content-Location',
+                ],
+                'note' => 'Content-Location: /documents/foo.json',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Location#Examples'
+            ],
 
 
 

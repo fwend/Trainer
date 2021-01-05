@@ -126,13 +126,67 @@ class HttpHeaders
                 'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires'
             ],
             [
-                'name' => '',
-                'content' => '.',
+                'name' => 'Conditionals 1',
+                'content' => 'The last modification date of the resource. Less accurate than an ETag header, it is a fallback mechanism. Conditional requests containing If-Modified-Since or If-Unmodified-Since headers make use of this field.',
                 'answers' => [
-                    '',
+                    'Last-Modified',
                 ],
-                'note' => '',
-                'link' => ''
+                'note' => 'Last-Modified: Wed, 21 Oct 2015 07:28:00 GMT. ',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified'
+            ],
+            [
+                'name' => 'Conditionals 2',
+                'content' => 'A unique string identifying the version of the resource. Conditional requests using If-Match and If-None-Match use this value to change the behavior of the request.',
+                'answers' => [
+                    'ETag',
+                ],
+                'note' => 'ETag: "33a64df551425fcc55e4d42a148795d9f25f89d4". ETag: W/"0815"',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag'
+            ],
+            [
+                'name' => 'Conditionals 3',
+                'content' => 'Makes the request conditional, and applies the method only if the stored resource matches one of the given ETags.',
+                'answers' => [
+                    'If-Match',
+                ],
+                'note' => 'If-Match: "bfc13a64729c4290ef5b2c2730249c88ca92d82d"',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match'
+            ],
+            [
+                'name' => 'Conditionals 4',
+                'content' => 'Makes the request conditional, and applies the method only if the stored resource doesn\'t match any of the given ETags. This is used to update caches (for safe requests), or to prevent to upload a new resource when one already exists.',
+                'answers' => [
+                    'If-None-Match',
+                ],
+                'note' => 'If-None-Match: W/"67ab43", "54ed21", "7892dd"',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match'
+            ],
+            [
+                'name' => 'Conditionals 5',
+                'content' => 'Makes the request conditional, and expects the entity to be transmitted only if it has been modified after the given date. This is used to transmit data only when the cache is out of date.',
+                'answers' => [
+                    'If-Modified-Since',
+                ],
+                'note' => 'If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since'
+            ],
+            [
+                'name' => 'Conditionals 6',
+                'content' => 'Makes the request conditional, and expects the entity to be transmitted only if it has not been modified after the given date. This ensures the coherence of a new fragment of a specific range with previous ones, or to implement an optimistic concurrency control system when modifying existing documents.',
+                'answers' => [
+                    'If-Unmodified-Since',
+                ],
+                'note' => 'If-Unmodified-Since: Wed, 21 Oct 2015 07:28:00 GMT',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Unmodified-Since'
+            ],
+            [
+                'name' => 'Conditionals 7',
+                'content' => 'Determines how to match request headers to decide whether a cached response can be used rather than requesting a fresh one from the origin server.',
+                'answers' => [
+                    'Vary',
+                ],
+                'note' => 'Vary: User-Agent',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary'
             ],
 
 

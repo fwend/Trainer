@@ -231,7 +231,79 @@ class HttpHeaders
                     'Content-Location',
                 ],
                 'note' => 'Content-Location: /documents/foo.json',
-                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Location#Examples'
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Location'
+            ],
+            [
+                'name' => 'Redirects',
+                'content' => 'Indicates the URL to redirect a page to.',
+                'answers' => [
+                    'Location',
+                ],
+                'note' => 'Location: /index.html',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Location'
+            ],
+            [
+                'name' => 'Downloads',
+                'content' => 'Indicates if the resource transmitted should be displayed inline (default behavior without the header), or if it should be handled like a download and the browser should present a “Save As” dialog.',
+                'answers' => [
+                    'Content-Disposition',
+                ],
+                'note' => 'Content-Disposition: attachment; filename="cool.html"',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition'
+            ],
+            [
+                'name' => 'Request context 1',
+                'content' => 'Contains an Internet email address for a human user who controls the requesting user agent.',
+                'answers' => [
+                    'From',
+                ],
+                'note' => 'From: webmaster@example.org',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/From'
+            ],
+            [
+                'name' => 'Request context 2',
+                'content' => 'Specifies the domain name of the server (for virtual hosting), and (optionally) the TCP port number on which the server is listening.',
+                'answers' => [
+                    'Host',
+                ],
+                'note' => 'Host: developer.cdn.mozilla.net',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Host'
+            ],
+            [
+                'name' => 'Request context 3',
+                'content' => 'The address of the previous web page from which a link to the currently requested page was followed.',
+                'answers' => [
+                    'Referer',
+                ],
+                'note' => 'Referer: https://developer.mozilla.org/en-US/docs/Web/JavaScript. Note that referer is a misspelling.',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer'
+            ],
+            [
+                'name' => 'Request context 4',
+                'content' => 'Contains a characteristic string that allows the network protocol peers to identify the application type, operating system, software vendor or software version of the requesting software user agent.',
+                'answers' => [
+                    'User-Agent',
+                ],
+                'note' => 'User-Agent: <product> / <product-version> <comment>. Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent'
+            ],
+            [
+                'name' => 'Response context 1',
+                'content' => 'Lists the set of HTTP request methods supported by a resource.',
+                'answers' => [
+                    'Allow',
+                ],
+                'note' => 'Allow: GET, POST, HEAD',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Allow'
+            ],
+            [
+                'name' => 'Response context 2',
+                'content' => 'Contains information about the software used by the origin server to handle the request.',
+                'answers' => [
+                    'Server',
+                ],
+                'note' => 'Server: Apache/2.4.1 (Unix)',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server'
             ],
 
 
@@ -256,9 +328,6 @@ class HttpHeaders
 
 
 
-            'attributes' => [
-
-            ]
         ]
     ];
 }

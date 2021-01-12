@@ -3,6 +3,6 @@ label.required:not(.form-check-label)::after {
 }
 
 .pre {
-    white-space: pre;
+    white-space: pre-wrap;
     font-family: monospace;
 }

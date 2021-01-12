@@ -305,6 +305,87 @@ class HttpHeaders
                 'note' => 'Server: Apache/2.4.1 (Unix)',
                 'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server'
             ],
+            [
+                'name' => 'CORS 1',
+                'content' => 'Indicates whether the response can be shared.',
+                'answers' => [
+                    'Access-Control-Allow-Origin',
+                ],
+                'note' => 'Access-Control-Allow-Origin: https://developer.mozilla.org',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin '
+            ],
+            [
+                'name' => 'CORS 2',
+                'content' => 'Indicates whether the response to the request can be exposed when the credentials flag is true.',
+                'answers' => [
+                    'Access-Control-Allow-Credentials',
+                ],
+                'note' => 'Access-Control-Allow-Credentials: true',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials'
+            ],
+            [
+                'name' => 'CORS 3',
+                'content' => 'Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request.',
+                'answers' => [
+                    'Access-Control-Allow-Headers',
+                ],
+                'note' => 'Access-Control-Allow-Headers: <header-name>[, <header-name>]*',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers'
+            ],
+            [
+                'name' => 'CORS 4',
+                'content' => 'Indicates which headers can be exposed as part of the response by listing their names.',
+                'answers' => [
+                    'Access-Control-Expose-Headers',
+                ],
+                'note' => 'By default, only the 7 CORS-safelisted response headers are exposed: Cache-Control, Content-Language, Content-Length, Content-Type, Expires,Last-Modified, Pragma',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers'
+            ],
+            [
+                'name' => 'CORS 5',
+                'content' => '',
+                'answers' => [
+                    '',
+                ],
+                'note' => '',
+                'link' => ''
+            ],
+            [
+                'name' => 'CORS 6',
+                'content' => 'Indicates how long the results of a preflight request can be cached.',
+                'answers' => [
+                    'Access-Control-Max-Age',
+                ],
+                'note' => 'Access-Control-Max-Age: <delta-seconds>',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age'
+            ],
+            [
+                'name' => 'CORS 7',
+                'content' => 'Used when issuing a preflight request to let the server know which HTTP headers will be used when the actual request is made.',
+                'answers' => [
+                    'Access-Control-Request-Headers',
+                ],
+                'note' => '',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'
+            ],
+            [
+                'name' => 'CORS 8',
+                'content' => 'Used when issuing a preflight request to let the server know which HTTP method will be used when the actual request is made.',
+                'answers' => [
+                    'Access-Control-Request-Method',
+                ],
+                'note' => 'Access-Control-Request-Method: POST',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Method'
+            ],
+            [
+                'name' => 'CORS 9',
+                'content' => 'Indicates where a fetch originates from.',
+                'answers' => [
+                    'Origin',
+                ],
+                'note' => 'Origin: https://developer.mozilla.org',
+                'link' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin'
+            ],
 
 
 

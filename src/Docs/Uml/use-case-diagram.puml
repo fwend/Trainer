@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+actor Student
+actor Admin
+package trainer {
+    usecase (do training) as UC1
+    usecase (manage training) as UC2
+    usecase (manage users) as UC3
+}
+Student -- UC1
+Admin -- UC2
+Admin -- UC3
+@enduml

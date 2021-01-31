@@ -1,0 +1,86 @@
+@startuml
+'!include themes\puml-theme-cf.puml
+'skinparam monochrome true
+'skinparam shadowing false
+class Entity {
+    #string id
+    #DateTime created
+    #DateTime modified
+}
+
+class Challenge {
+    -string note
+    -string content
+    -string link
+    -string name
+    -int position
+    -int score
+    -array answers
+    -ChallengeCategory category
+}
+
+class ChallengeCategory {
+    -string name
+    -int position
+    -Collection challenges
+    -ChallengeSection section
+}
+
+class ChallengeSection {
+    -string name
+    -int position
+    -Collection categories
+}
+
+class ChallengeRun {
+    -RunMode mode
+    -Challenge current
+    -int count
+    -ChallengeSection section
+    -User user
+    -RunHistory runHistory
+}
+
+class RunMode {
+    -int length
+    -int type
+    -string name
+    -int position
+
+    +const int TYPE_RANDOM
+    +const int TYPE_ALL
+}
+
+class RunHistory {
+    -array challengeIds
+    -ChallengeRun run
+}
+class User {
+    -string password
+    -string email
+    -array roles
+    -Collection runs
+}
+
+interface UserInterface {
+}
+
+Challenge --|> Entity
+ChallengeCategory --|> Entity
+ChallengeSection --|> Entity
+ChallengeRun --|> Entity
+RunMode --|> Entity
+RunHistory --|> Entity
+User --|> Entity
+User --|> UserInterface
+
+Challenge <--> ChallengeCategory
+ChallengeSection *-- ChallengeCategory
+ChallengeRun --> ChallengeSection
+ChallengeRun --> Challenge
+ChallengeRun --> RunMode
+ChallengeRun <--> RunHistory
+ChallengeRun --> User
+User o-- ChallengeRun
+
+@enduml

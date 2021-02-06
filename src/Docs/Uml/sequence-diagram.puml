@@ -1,0 +1,27 @@
+@startuml
+'!include themes\puml-theme-cf.puml
+skinparam style strictuml
+
+actor Customer as C
+participant "ATM Machine" as A
+participant Bank as B
+
+C -> A: insert card
+activate C
+activate A
+A --> C: ask pin
+C -> A: provide pin
+A -> B: verify pin
+activate B
+
+alt
+    B --> A: pin accepted
+else
+    B --> A: pin rejected
+end
+deactivate B
+
+A --> C: ask amount
+C -> A: enter amount
+
+@enduml

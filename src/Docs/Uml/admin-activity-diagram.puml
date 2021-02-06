@@ -1,0 +1,18 @@
+@startuml
+'!include themes\puml-theme-cf.puml
+skinparam ConditionEndStyle hline
+start
+if (section exists?) then (yes)
+    :select section;
+else (no)
+    :create section;
+endif
+if (category exists?) then (yes)
+    :select category;
+else (no)
+    :create category;
+endif
+:add challenge;
+stop
+@enduml
+

@@ -1,7 +1,5 @@
 @startuml
 '!include themes\puml-theme-cf.puml
-'skinparam monochrome true
-'skinparam shadowing false
 class Entity {
     #string id
     #DateTime created

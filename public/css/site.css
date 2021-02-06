@@ -6,3 +6,4 @@ label.required:not(.form-check-label)::after {
     white-space: pre-wrap;
     font-family: monospace;
 }
+

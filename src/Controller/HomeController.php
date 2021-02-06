@@ -14,8 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends BaseController
 {
-    // TODO put result and new question on same page
-
     /**
      * @Route("/", name="index")
      * @param Request $request

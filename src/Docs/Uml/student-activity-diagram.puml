@@ -1,0 +1,11 @@
+@startuml
+'!include themes\puml-theme-cf.puml
+start
+:select training;
+:select mode;
+while (challenges available?)
+  :do challenge;
+endwhile
+stop
+@enduml
+

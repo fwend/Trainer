@@ -1,6 +1,6 @@
 ' defaults
 
-skinparam shadowing false
+skinparam shadowing true
 skinparam DefaultFontName Proxima Nova
 skinparam ArrowColor #00b2e2
 skinparam DefaultFontColor #454645
@@ -51,9 +51,17 @@ skinparam StorageBorderColor #2D74BA
 skinparam SwimlaneBorderColor #2D74BA
 skinparam UsecaseBorderColor #2D74BA
 
+' FontStyle
+skinparam ActivityFontStyle bold
+skinparam ActivityDiamondFontStyle plain
+
+' FontColor
+skinparam ActivityFontColor #FFF
+
+
 ' BackgroundColor
-skinparam ActivityBackgroundColor #FFFFFF
-skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBackgroundColor White
+skinparam ActivityBackgroundColor CornFlowerBlue
 skinparam ActorBackgroundColor #FFFFFF
 skinparam AgentBackgroundColor #FFFFFF
 skinparam ArtifactBackgroundColor #FFFFFF
@@ -79,7 +87,7 @@ skinparam IconPublicBackgroundColor #FFFFFF
 skinparam InterfaceBackgroundColor #FFFFFF
 skinparam LegendBackgroundColor #FFFFFF
 skinparam NodeBackgroundColor #FFFFFF
-skinparam NoteBackgroundColor #FFFFFF
+skinparam NoteBackgroundColor #FFFF99
 skinparam ObjectBackgroundColor #FFFFFF
 skinparam PackageBackgroundColor #FFFFFF
 skinparam ParticipantBackgroundColor #FFFFFF

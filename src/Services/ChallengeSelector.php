@@ -8,8 +8,9 @@ use App\Entity\RunHistory;
 use App\Entity\RunMode;
 use App\Repository\ChallengeCategoryRepository;
 use App\Repository\ChallengeRepository;
+use App\Services\interfaces\ChallengeSelectorInterface;
 
-class ChallengeSelector
+class ChallengeSelector implements ChallengeSelectorInterface
 {
     private ChallengeRepository $challengeRepo;
     private ChallengeCategoryRepository $categoryRepo;
@@ -76,7 +77,7 @@ class ChallengeSelector
      * @param ChallengeRun $run
      * @return Challenge|null
      */
-    public function findFirstRandom(ChallengeRun $run): ?Challenge
+    private function findFirstRandom(ChallengeRun $run): ?Challenge
     {
         if ($run->getCount() >= $run->getMode()->getLength()) {
             return null;
@@ -98,7 +99,7 @@ class ChallengeSelector
      * @param ChallengeRun $run
      * @return Challenge|null
      */
-    public function findNextRandom(ChallengeRun $run): ?Challenge
+    private function findNextRandom(ChallengeRun $run): ?Challenge
     {
         if ($run->getCount() >= $run->getMode()->getLength()) {
             return null;

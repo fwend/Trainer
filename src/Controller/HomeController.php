@@ -6,7 +6,7 @@ use App\Entity\ChallengeRun;
 use App\Form\ChallengeRunType;
 use App\Form\TakeChallengeType;
 use App\Repository\ChallengeRunRepository;
-use App\Services\ChallengeSelector;
+use App\Services\interfaces\ChallengeSelectorInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,13 +18,13 @@ class HomeController extends BaseController
      * @Route("/", name="index")
      * @param Request $request
      * @param ChallengeRunRepository $runRepo
-     * @param ChallengeSelector $selector
+     * @param ChallengeSelectorInterface $selector
      * @return Response
      */
     public function indexAction(
         Request $request,
         ChallengeRunRepository $runRepo,
-        ChallengeSelector $selector): Response
+        ChallengeSelectorInterface $selector): Response
     {
         $user = $this->getUser();
         $run = $runRepo->findRun($user);
@@ -62,13 +62,13 @@ class HomeController extends BaseController
      * @Route("/take-challenge/{run}", name="take_challenge")
      * @param Request $request
      * @param ChallengeRun $run
-     * @param ChallengeSelector $selector
+     * @param ChallengeSelectorInterface $selector
      * @return Response
      */
     public function takeChallengeAction(
         Request $request,
         ChallengeRun $run,
-        ChallengeSelector $selector): Response
+        ChallengeSelectorInterface $selector): Response
     {
         $curr = $run->getCurrent();
         if (!$curr) {

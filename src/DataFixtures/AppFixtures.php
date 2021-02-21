@@ -72,14 +72,20 @@ class AppFixtures extends Fixture
 
     private function loadUsers(ObjectManager $manager)
     {
-        $user = new User();
-        $user->setPassword($this->passwordEncoder->encodePassword(
-            $user,
-            'D9Go88'
-        ));
-        $user->setRoles(['ROLE_ADMIN']);
-        $user->setEmail('jos@iboss.nl');
-        $manager->persist($user);
+        $users = [
+            ['email' => 'jos@iboss.nl', 'password' => 'D9Go88', 'roles' => ['ROLE_ADMIN']],
+            ['email' => 'test@iboss.nl', 'password' => 'testtest', 'roles' => ['ROLE_USER']],
+        ];
+
+        foreach ($users as $u) {
+            $user = new User();
+            $user->setPassword($this->passwordEncoder->encodePassword(
+                $user, $u['password']
+            ));
+            $user->setRoles($u['roles']);
+            $user->setEmail($u['email']);
+            $manager->persist($user);
+        }
     }
 
     private function loadSections(ObjectManager $manager)
